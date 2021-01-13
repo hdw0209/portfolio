@@ -1,0 +1,233 @@
+.header-area .side-nav-slide {
+  width: calc(100% + 10px);
+}
+
+.header-area h1 {
+  padding-left: 0.2rem;
+}
+
+.txt-box {
+  display: none;
+}
+
+.visual-area {
+  height: auto;
+}
+
+.visual-area::before {
+  display: none;
+}
+
+.visual-area .img-box img {
+  width: 100%;
+}
+
+.visual-area .img-box > div {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.visual-area .img-box > div > button {
+  cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  background: none;
+  z-index: 10000;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+  color: #fff;
+}
+
+.visual-area .img-box > div > button:nth-of-type(1) {
+  left: 30px;
+}
+
+.visual-area .img-box > div > button:nth-of-type(2) {
+  right: 30px;
+}
+
+.news-area {
+  margin-top: 7rem;
+}
+
+.news-area > div {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.news-area .news1,
+.news-area .news2 {
+  width: 100%;
+}
+
+.news-area .news1 {
+  height: 14.5rem;
+}
+
+.news-area .news1 ul li {
+  width: 100%;
+}
+
+.news-area .news1 ul li:last-child {
+  display: none;
+}
+
+.news-area .news2 > div {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.news-area .news2 .news2-2 i {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+}
+
+.ico-area ul {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ico-area ul li {
+  width: calc(100% / 3);
+  margin-bottom: 2.5rem;
+}
+
+.ico-area ul li:nth-child(4), .ico-area ul li:nth-child(5), .ico-area ul li:nth-child(6) {
+  margin-bottom: 0;
+}
+
+.resch-area {
+  margin-top: 4rem;
+}
+
+.resch-area > div {
+  width: 100%;
+}
+
+.resch-area .resch-img {
+  display: none;
+}
+
+.photo-area {
+  margin-top: 3rem;
+}
+
+.photo-area ul li {
+  width: 100%;
+}
+
+.photo-area li:nth-child(2),
+.photo-area li:nth-child(3) {
+  display: none;
+}
+
+.supercom-area h2 {
+  margin: 0 1rem;
+}
+
+.supercom-area h3 {
+  padding-top: 1rem;
+}
+
+.supercom-area .com-list1 {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.supercom-area .com-list1 ul {
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.supercom-area .com-list1 li {
+  display: none;
+}
+
+.supercom-area .com-list1 li:first-child {
+  display: block;
+  text-align: center;
+}
+
+.supercom-area:before {
+  height: 15rem;
+  top: 7rem;
+}
+
+.supercom-area > div {
+  margin-top: 3rem;
+  padding: 0;
+}
+
+.supercom-area .graph {
+  width: 100%;
+  margin: 2.5rem 1rem 0 1rem;
+}
+
+.supercom-area .graph:before, .supercom-area .graph:after {
+  right: -1rem;
+  top: -1rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.supercom-area .graph:after {
+  left: -1rem;
+  top: 5.55rem;
+}
+
+.supercom-area .graph img {
+  max-height: 5rem;
+}
+
+.supercom-area .com-list2 {
+  margin: 3rem 1rem 0 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.supercom-area .com-list2 li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: solid 4px #eff2f7;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.supercom-area .com-list2 li img {
+  margin-right: 1.5rem;
+}
+
+.supercom-area .com-list2 li p {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+.supercom-area .com-list2 li:last-child {
+  border: none;
+}
+
+footer nav {
+  display: none;
+}
+
+footer > div .copyright-area select {
+  position: static;
+  width: 100%;
+}
+
+footer > div .copyright-area address {
+  text-align: center;
+}
+/*# sourceMappingURL=mobile.css.map */

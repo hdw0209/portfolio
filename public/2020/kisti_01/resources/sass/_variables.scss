@@ -1,0 +1,89 @@
+@import './bootstrap/mixins';
+@import './bootstrap/functions';
+@import './bootstrap/variables';
+
+$font-family: 'Noto Sans KR',
+sans-serif;
+$font-size: 14px;
+$font-color: #333;
+$width-size: 1400px;
+$color-main: #1181c9;
+$color-sub1: #485bce;
+$color-sub2: #5578eb;
+$color-sub3: #16192c;
+$color-border1: #c5c7d6;
+$color-border2: #dedfe5;
+$color-bg1: #f5f8fd;
+$color-bg2: #f0f3f5;
+
+@mixin font-awesome($code: '') {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    vertical-align: middle;
+    content: quote($code);
+}
+
+@mixin hide {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -30000%;
+    overflow: hidden;
+}
+
+@mixin ani($delay: 0.3s) {
+    transition: all $delay;
+}
+
+@mixin required {
+    position: relative;
+    overflow: hidden;
+    color: transparent;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-indent: -100px;
+    margin-left: 5px;
+
+    &::after {
+        position: absolute;
+        left: 100px;
+        top: 2px;
+        color: $danger;
+        width: inherit;
+        height: inherit;
+        font-size: 10px;
+        @include font-awesome('\f621');
+    }
+}
+
+@mixin sch-area-border {
+    border: solid 1px $color-border1;
+    box-shadow: 0 4px 0 lighten($color-border1, 15%);
+    margin-bottom: 30px;
+}
+
+@mixin gallery-list {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        margin: 0 30px 30px 0;
+
+        &:nth-of-type(4n + 0) {
+            margin-right: 0;
+        }
+
+        a {
+            width: 327.5px;
+            overflow: hidden;
+            display: block;
+            border: solid 1px $color-border1;
+            box-sizing: border-box;
+            @include ani;
+        }
+    }
+}

@@ -1,0 +1,3855 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+li,
+p,
+div,
+fieldset,
+button,
+input {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*!
+ * animate.css - https://animate.style/
+ * Version - 4.1.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2020 Animate.css
+ */
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate__animated.animate__infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animate__animated.animate__repeat-1 {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: var(--animate-repeat);
+  animation-iteration-count: var(--animate-repeat);
+}
+
+.animate__animated.animate__repeat-2 {
+  -webkit-animation-iteration-count: calc(1 * 2);
+  animation-iteration-count: calc(1 * 2);
+  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 2);
+  animation-iteration-count: calc(var(--animate-repeat) * 2);
+}
+
+.animate__animated.animate__repeat-3 {
+  -webkit-animation-iteration-count: calc(1 * 3);
+  animation-iteration-count: calc(1 * 3);
+  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 3);
+  animation-iteration-count: calc(var(--animate-repeat) * 3);
+}
+
+.animate__animated.animate__delay-1s {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-delay: var(--animate-delay);
+  animation-delay: var(--animate-delay);
+}
+
+.animate__animated.animate__delay-2s {
+  -webkit-animation-delay: calc(1s * 2);
+  animation-delay: calc(1s * 2);
+  -webkit-animation-delay: calc(var(--animate-delay) * 2);
+  animation-delay: calc(var(--animate-delay) * 2);
+}
+
+.animate__animated.animate__delay-3s {
+  -webkit-animation-delay: calc(1s * 3);
+  animation-delay: calc(1s * 3);
+  -webkit-animation-delay: calc(var(--animate-delay) * 3);
+  animation-delay: calc(var(--animate-delay) * 3);
+}
+
+.animate__animated.animate__delay-4s {
+  -webkit-animation-delay: calc(1s * 4);
+  animation-delay: calc(1s * 4);
+  -webkit-animation-delay: calc(var(--animate-delay) * 4);
+  animation-delay: calc(var(--animate-delay) * 4);
+}
+
+.animate__animated.animate__delay-5s {
+  -webkit-animation-delay: calc(1s * 5);
+  animation-delay: calc(1s * 5);
+  -webkit-animation-delay: calc(var(--animate-delay) * 5);
+  animation-delay: calc(var(--animate-delay) * 5);
+}
+
+.animate__animated.animate__faster {
+  -webkit-animation-duration: calc(1s / 2);
+  animation-duration: calc(1s / 2);
+  -webkit-animation-duration: calc(var(--animate-duration) / 2);
+  animation-duration: calc(var(--animate-duration) / 2);
+}
+
+.animate__animated.animate__fast {
+  -webkit-animation-duration: calc(1s * 0.8);
+  animation-duration: calc(1s * 0.8);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.8);
+  animation-duration: calc(var(--animate-duration) * 0.8);
+}
+
+.animate__animated.animate__slow {
+  -webkit-animation-duration: calc(1s * 2);
+  animation-duration: calc(1s * 2);
+  -webkit-animation-duration: calc(var(--animate-duration) * 2);
+  animation-duration: calc(var(--animate-duration) * 2);
+}
+
+.animate__animated.animate__slower {
+  -webkit-animation-duration: calc(1s * 3);
+  animation-duration: calc(1s * 3);
+  -webkit-animation-duration: calc(var(--animate-duration) * 3);
+  animation-duration: calc(var(--animate-duration) * 3);
+}
+
+@media print, (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-transition-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+  }
+  .animate__animated[class*='Out'] {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+}
+
+.shakeY {
+  -webkit-animation-name: shakeY;
+          animation-name: shakeY;
+}
+
+@-webkit-keyframes shakeY2 {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -2px, 0);
+            transform: translate3d(0, -2px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 2px, 0);
+            transform: translate3d(0, 2px, 0);
+  }
+}
+
+@keyframes shakeY2 {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -2px, 0);
+            transform: translate3d(0, -2px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 2px, 0);
+            transform: translate3d(0, 2px, 0);
+  }
+}
+
+.shakeY {
+  -webkit-animation-name: shakeY2;
+          animation-name: shakeY2;
+}
+
+html,
+body {
+  font-size: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+
+header {
+  position: relative;
+  background: #171d33;
+}
+
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-width: 1000px;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 4rem;
+}
+
+@media (max-width: 1000px) {
+  header > div {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+header h1,
+header .login-area {
+  margin: 0.8rem 0.8rem 0 0.8rem;
+  min-width: 8rem;
+  width: 8rem;
+}
+
+@media (max-width: 1000px) {
+  header h1 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 0.8rem;
+    margin: 0;
+    z-index: 20;
+  }
+}
+
+header .nav-open,
+header .sch-area > button,
+header .sch-area > div > button {
+  width: 4rem;
+  height: 4rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  line-height: 100%;
+  background: #263143;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+}
+
+@media (max-width: 1000px) {
+  header .nav-open,
+  header .sch-area > button,
+  header .sch-area > div > button {
+    border-radius: 100%;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.7rem;
+  }
+}
+
+header .nav-open {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  header .nav-open {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+  }
+}
+
+header nav {
+  width: 1400px;
+  padding-left: 4rem;
+}
+
+@media screen and (max-width: 1500px) {
+  header nav {
+    padding: 0;
+  }
+}
+
+header .login-area .sitemap,
+header .login-area ul {
+  display: none;
+}
+
+header .login-area a {
+  font-size: 0.6rem;
+  padding: 0.3em 0;
+  color: #fff;
+  font-weight: 300;
+  display: block;
+}
+
+header .login-area a .iconify {
+  margin-left: 0.5em;
+  font-size: 0.5rem;
+}
+
+.gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: center;
+  height: 4rem;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .gnb {
+    display: block;
+    width: 100%;
+    text-align: left;
+    height: 100%;
+  }
+}
+
+.gnb a {
+  color: #fff;
+  width: 100%;
+}
+
+.gnb > li {
+  display: block;
+  width: 100%;
+}
+
+.gnb > li > a {
+  padding: 1.5rem 0;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li > a {
+    padding: 1rem 1.5rem;
+    background: #736b6b;
+    border-top: 1px solid #111319;
+    background: #2b2f3e;
+    position: relative;
+  }
+  .gnb > li > a::after {
+    content: url("https://api.iconify.design/ri:arrow-down-s-line.svg?color=%23fff&height=24");
+    vertical-align: -0.125em;
+    position: absolute;
+    right: 1.5rem;
+  }
+  .gnb > li > a.on::after {
+    content: url("https://api.iconify.design/ri:arrow-up-s-line.svg?color=%23fff&height=24");
+  }
+}
+
+.gnb > li > a:hover, .gnb > li > a.on {
+  text-decoration: none;
+  color: #ffe064;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li > a:hover, .gnb > li > a.on {
+    color: #fff;
+  }
+}
+
+.gnb > li > div {
+  display: none;
+}
+
+.gnb > li:hover > a {
+  color: #ffe064;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:hover > a {
+    color: #fff;
+  }
+}
+
+.gnb > li:hover > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  width: 100%;
+  background: #736b6b;
+  z-index: 10;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:hover > div {
+    display: none;
+    position: static;
+  }
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(1) > a.on {
+    background: #736b6b;
+  }
+}
+
+.gnb > li:nth-child(2) > div,
+.gnb > li:nth-child(2) a::before {
+  background: #9a3038;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(2) > a.on {
+    background: #9a3038;
+  }
+}
+
+.gnb > li:nth-child(2) .lnb > li > a {
+  background: #cb3f4a;
+}
+
+.gnb > li:nth-child(2) .lnb > li > a::before {
+  background: #db7981;
+}
+
+.gnb > li:nth-child(3) > div,
+.gnb > li:nth-child(3) a::before {
+  background: #2a4c76;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(3) > a.on {
+    background: #2a4c76;
+  }
+}
+
+.gnb > li:nth-child(3) .lnb > li > a {
+  background: #4174b6;
+}
+
+.gnb > li:nth-child(3) .lnb > li > a::before {
+  background: #7a9ecc;
+}
+
+.gnb > li:nth-child(4) > div,
+.gnb > li:nth-child(4) a::before {
+  background: #016b4f;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(4) > a.on {
+    background: #016b4f;
+  }
+}
+
+.gnb > li:nth-child(4) .lnb > li > a {
+  background: #018c67;
+}
+
+.gnb > li:nth-child(4) .lnb > li > a::before {
+  background: #4eaf95;
+}
+
+.gnb > li:nth-child(5) > div,
+.gnb > li:nth-child(5) a::before {
+  background: #11646f;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(5) > a.on {
+    background: #11646f;
+  }
+}
+
+.gnb > li:nth-child(5) .lnb > li > a {
+  background: #178391;
+}
+
+.gnb > li:nth-child(5) .lnb > li > a::before {
+  background: #5da8b2;
+}
+
+.gnb > li:nth-child(6) > div,
+.gnb > li:nth-child(6) a::before {
+  background: #a06920;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(6) > a.on {
+    background: #a06920;
+  }
+}
+
+.gnb > li:nth-child(6) .lnb > li > a {
+  background: #f6a131;
+}
+
+.gnb > li:nth-child(6) .lnb > li > a::before {
+  background: #f9bd6f;
+}
+
+.gnb > li:nth-child(7) > div,
+.gnb > li:nth-child(7) a::before {
+  background: #695780;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(7) > a.on {
+    background: #695780;
+  }
+}
+
+.gnb > li:nth-child(7) .lnb > li > a {
+  background: #8a72a8;
+}
+
+.gnb > li:nth-child(7) .lnb > li > a::before {
+  background: #8a72a8;
+}
+
+.gnb > li:nth-child(8) > div,
+.gnb > li:nth-child(8) a::before {
+  background: #113469;
+}
+
+@media (max-width: 1000px) {
+  .gnb > li:nth-child(8) > a.on {
+    background: #113469;
+  }
+}
+
+.gnb > li:nth-child(8) .lnb > li > a {
+  background: #1350ad;
+}
+
+.gnb > li:nth-child(8) .lnb > li > a::before {
+  background: #5a85c6;
+}
+
+.gnb h2 {
+  text-align: right;
+  width: 17%;
+  color: #fff;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 1000px) {
+  .gnb h2 {
+    display: none;
+  }
+}
+
+.gnb .lnb {
+  width: 83%;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb {
+    width: 100%;
+  }
+}
+
+.gnb .lnb > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  border-bottom: solid 1px #d9d9d9;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li {
+    display: block;
+  }
+}
+
+.gnb .lnb > li:last-child {
+  border-bottom: none;
+}
+
+.gnb .lnb > li:last-child > a::before {
+  display: none;
+}
+
+.gnb .lnb > li a {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.gnb .lnb > li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li a:hover {
+    text-decoration: none;
+  }
+}
+
+.gnb .lnb > li > a {
+  width: 10rem;
+  min-width: 10rem;
+  position: relative;
+  color: #fff;
+  background: #968c8c;
+  padding: 0.5rem 0 0.5rem 0.8rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.gnb .lnb > li > a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  width: 100%;
+  background: #c8c0c0;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li > a {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    background: #b0a5a5;
+  }
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li ul {
+    padding: 0.8rem 0;
+    display: none;
+  }
+}
+
+.gnb .lnb > li li {
+  display: inline-block;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li li {
+    display: block;
+  }
+}
+
+.gnb .lnb > li li a {
+  position: relative;
+  padding: 0.5rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #333;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li li a {
+    padding: 0.4rem 1.5rem 0.4rem 2.2rem;
+    background: #fff;
+    color: #555;
+  }
+}
+
+.gnb .lnb > li li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  margin-left: 0.5rem;
+  background: #968c8c;
+}
+
+@media (max-width: 1000px) {
+  .gnb .lnb > li li a::before {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  #side-nav {
+    display: block;
+    padding: 0;
+    position: fixed;
+    left: -16rem;
+    top: 0;
+    width: 16rem;
+    height: 100%;
+    background: #4e5366;
+    z-index: 100;
+    overflow-y: auto;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
+  }
+  #side-nav.on {
+    left: 0;
+  }
+  #side-nav .login-area {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 8rem;
+    padding: 1.5rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+  }
+  #side-nav .login-area a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #838794;
+    border-radius: 25px;
+    padding: 0.8em 1rem;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+  }
+  #side-nav .login-area .sitemap {
+    display: inline-block;
+  }
+  .dim.on {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 49;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.sch-area {
+  position: relative;
+  width: 4rem;
+  min-width: 4rem;
+  margin-right: 3rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .sch-area {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sch-area {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.sch-area > div {
+  display: none;
+}
+
+.sch-area > button,
+.sch-area > div > button {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 1000px) {
+  .sch-area > button,
+  .sch-area > div > button {
+    position: static;
+  }
+}
+
+.sch-area.on > div {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 1000px) {
+  .sch-area.on > div {
+    width: 100%;
+  }
+}
+
+.sch-area.on > div > div {
+  position: absolute;
+  left: -22.45rem;
+  top: 3.95rem;
+  background: #fff;
+  width: 26.5rem;
+  height: 11.5rem;
+  border: solid 1px #2b2f3e;
+  z-index: 40;
+}
+
+.sch-area.on > div > div a {
+  color: #333;
+}
+
+@media (max-width: 1000px) {
+  .sch-area.on > div > div {
+    left: 0;
+    top: 4rem;
+    width: 100%;
+    height: 6rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.sch-area .sch-list {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sch-area .sch-list h3 {
+  font-size: 0.9rem;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list h3 {
+    display: none;
+  }
+}
+
+.sch-area .sch-list label {
+  position: absolute;
+  left: -99999px;
+  top: 0;
+  overflow: hidden;
+  height: 1px;
+}
+
+.sch-area .sch-list > * {
+  padding: 1.15rem;
+}
+
+.sch-area .sch-list fieldset {
+  width: 65%;
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list fieldset {
+    width: 100%;
+    text-align: center;
+    padding: 1.65rem;
+  }
+}
+
+.sch-area .sch-list fieldset select,
+.sch-area .sch-list fieldset input,
+.sch-area .sch-list fieldset button {
+  width: 100%;
+  font-size: 0.7rem;
+  padding: 0 0.9rem;
+  height: 2rem;
+  border: solid 1px #dfdfdf;
+  border-radius: 5px;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list fieldset select,
+  .sch-area .sch-list fieldset input,
+  .sch-area .sch-list fieldset button {
+    border-radius: 2px;
+    font-size: 0.8rem;
+    height: 2.5rem;
+    width: 70%;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .sch-area .sch-list fieldset select,
+  .sch-area .sch-list fieldset input,
+  .sch-area .sch-list fieldset button {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list fieldset select {
+    display: none;
+  }
+}
+
+.sch-area .sch-list fieldset input {
+  background: #f5f5f5;
+}
+
+.sch-area .sch-list fieldset input::-webkit-input-placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.sch-area .sch-list fieldset input:-ms-input-placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.sch-area .sch-list fieldset input::-ms-input-placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.sch-area .sch-list fieldset input::placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.sch-area .sch-list fieldset button {
+  background: #ff4d30;
+  margin-bottom: none;
+  margin-top: 0.15rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.7rem;
+  border: none;
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list fieldset button {
+    background: #0f9f75;
+    font-size: 0.8rem;
+    margin-top: 0;
+    width: 5rem;
+    min-width: 5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .sch-area .sch-list fieldset button {
+    margin-left: 0.2rem;
+  }
+}
+
+.sch-area .sch-list section {
+  width: 35%;
+  background: #f9f9f9;
+  border-left: solid 1px #e6e6e6;
+}
+
+@media (max-width: 1000px) {
+  .sch-area .sch-list section {
+    display: none;
+  }
+}
+
+.sch-area .sch-list section ol {
+  counter-reset: num;
+}
+
+.sch-area .sch-list section li {
+  font-size: 0.7rem;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sch-area .sch-list section li::before {
+  content: counter(num);
+  counter-increment: num 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.8rem;
+  height: 1rem;
+  padding-top: 0.1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  font-size: 0.6rem;
+  background: #959595;
+}
+
+.sch-area .sch-list section li:nth-child(1)::before, .sch-area .sch-list section li:nth-child(2)::before {
+  background: #ff4d30;
+}
+
+.m1-area {
+  position: relative;
+  width: 100%;
+  background: #eae1e1 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section04_2.jpg) no-repeat center top;
+  height: 508px;
+}
+
+.m1-area > div {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 1200px) {
+  .m1-area {
+    background-position-y: bottom;
+    height: auto;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  .m1-area > div {
+    width: 100%;
+  }
+  .m1-area .m1-2 {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .m1-area {
+    padding: 0 1rem 6rem 1rem;
+  }
+  .m1-area .m-logo {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.m1-1 {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5.9rem;
+}
+
+.m1-1 .m-logo {
+  margin-right: 1rem;
+}
+
+.m1-1 .m-logo img {
+  width: 100%;
+  max-width: 336px;
+}
+
+@media (max-width: 500px) {
+  .m1-1 .m-logo img {
+    width: 336px;
+  }
+}
+
+.m1-1 .m-logo a:nth-of-type(2) {
+  display: none;
+}
+
+.m1-1 fieldset {
+  position: relative;
+  padding: 0;
+}
+
+.m1-1 fieldset h3,
+.m1-1 fieldset label {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: -99999px;
+  height: 1px;
+}
+
+.m1-1 fieldset input,
+.m1-1 fieldset button {
+  height: 2.3rem;
+  line-height: 100%;
+  border-radius: 1.5rem;
+}
+
+.m1-1 fieldset input {
+  background: #fff;
+  padding: 0 1.2rem;
+  font-size: 0.8rem;
+  width: 20rem;
+}
+
+.m1-1 fieldset button {
+  position: absolute;
+  background: #17326f;
+  color: #fff;
+  width: 3.5rem;
+  font-size: 1.4rem;
+  right: 0;
+  top: 0;
+}
+
+.m1-1 .m-weather {
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 1200px) {
+  .m1-1 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .m1-1 .m-logo a:nth-of-type(2) {
+    display: block;
+  }
+  .m1-1 .m-logo a:nth-of-type(1) {
+    display: none;
+  }
+  .m1-1 .m-sch {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .m1-1 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.m1-2 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .m1-2 {
+    display: block;
+    width: auto;
+  }
+}
+
+.m1-2 .m-slick {
+  position: relative;
+}
+
+.m1-2 .m-slick button,
+.m1-2 .m-slick p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.6);
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  z-index: 10;
+}
+
+.m1-2 .m-slick button:hover,
+.m1-2 .m-slick p:hover {
+  background: #000;
+}
+
+.m1-2 .m-slick p {
+  width: 90px;
+  right: 94px;
+  color: #fff;
+  font-weight: 100;
+  line-height: 45px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.m1-2 .m-slick p:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.m1-2 .m-slick .slick-prev {
+  right: 47px;
+}
+
+.m1-2 .m-slick .slick-prev::before {
+  content: url("https://api.iconify.design/ic:round-keyboard-arrow-left.svg?color=%23fff&height=30");
+  vertical-align: -0.125em;
+}
+
+.m1-2 .m-slick .slick-next::before {
+  content: url("https://api.iconify.design/ic:round-keyboard-arrow-right.svg?color=%23fff&height=30");
+  vertical-align: -0.125em;
+}
+
+.m1-2 .m-slick1 {
+  width: 720px;
+  height: 390px;
+}
+
+@media (max-width: 1200px) {
+  .m1-2 .m-slick1 {
+    width: 100%;
+    height: auto;
+  }
+  .m1-2 .m-slick1 img {
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+  }
+}
+
+.m1-2 .m-slick2 {
+  margin: 7px 0;
+  width: 474px;
+  height: 173px;
+}
+
+.m1-2 .m-slick2 p {
+  width: 380px;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .m1-2 .m-slick2 {
+    width: 100%;
+    height: auto;
+  }
+  .m1-2 .m-slick2 img {
+    width: 100%;
+    height: auto;
+    max-height: 173px;
+  }
+  .m1-2 .m-slick2 p {
+    width: calc(100% - 94px);
+  }
+}
+
+.m1-2 .m-mayor {
+  background: #4f81b3 url(https://www.daejeon.go.kr/images/drh/main/mayor_back.png) no-repeat right top;
+  color: #fff;
+  height: 110px;
+  letter-spacing: -1px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 1.3rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.m1-2 .m-mayor a {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1200px) {
+  .m1-2 .m-mayor {
+    margin-top: 7px;
+  }
+}
+
+.m1-2 .m-link ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .m1-2 .m-link ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.m1-2 .m-link li {
+  width: calc(25% - 6px);
+  background: #717482;
+  color: #fff;
+  text-align: center;
+}
+
+.m1-2 .m-link li a {
+  padding-top: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  color: #fff;
+  height: 93px;
+  font-size: 0.7rem;
+}
+
+.m1-2 .m-link li a:hover {
+  background: #495062;
+}
+
+.m1-2 .m-link li a:hover svg {
+  -webkit-animation: shakeY2;
+          animation: shakeY2;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.m1-2 .m-link li svg {
+  display: block;
+  margin: 0.5rem auto;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .m1-2 .m-link li {
+    text-align: left;
+    width: calc(50% - 4px);
+    margin-top: 7px;
+  }
+  .m1-2 .m-link li a {
+    position: relative;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 3rem;
+  }
+  .m1-2 .m-link li svg {
+    position: absolute;
+    margin: 0;
+    top: 0.7rem;
+    left: 1rem;
+  }
+}
+
+.m2-area h3,
+.m3-area h3,
+.m4-area h3 {
+  font-size: 1rem;
+  padding: 1.1rem 0;
+  letter-spacing: -2px;
+  color: #000;
+}
+
+.m2-area a:hover,
+.m3-area a:hover,
+.m4-area a:hover {
+  text-decoration: none;
+}
+
+.m2-area .btn-more,
+.m3-area .btn-more,
+.m4-area .btn-more {
+  position: absolute;
+  right: 0;
+  top: 1.1rem;
+}
+
+.m2-area .btn-more a,
+.m3-area .btn-more a,
+.m4-area .btn-more a {
+  display: block;
+  text-indent: -99999px;
+  color: transparent;
+  overflow: hidden;
+  width: 17px;
+  height: 17px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_more_main.png) no-repeat 0 0;
+}
+
+.m2-area {
+  width: 1200px;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .m2-area {
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-area {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m2-area h3 {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-area h3 {
+    padding-left: 0;
+  }
+}
+
+.m2-area span {
+  font-size: 0.75rem;
+  padding: 0.5rem 0;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m2-1 {
+  width: 100%;
+  max-width: 672px;
+}
+
+.m2-1 > * {
+  position: relative;
+}
+
+.m2-1 .m-notice > ul {
+  width: 100%;
+  height: 265px;
+  border-bottom: solid 1px #dadada;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul {
+    height: auto;
+    border-bottom: none;
+  }
+}
+
+.m2-1 .m-notice > ul:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.m2-1 .m-notice > ul > li {
+  float: left;
+  width: calc(100% / 5 - 20px);
+}
+
+@media (max-width: 1000px) {
+  .m2-1 .m-notice > ul > li {
+    width: calc(100% / 5 - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul > li {
+    float: none;
+    width: 100%;
+  }
+}
+
+.m2-1 .m-notice > ul > li > a {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: normal;
+  padding: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul > li > a {
+    text-align: left;
+    border-bottom: solid 1px #dadada;
+    padding: 0.7rem 0.3rem;
+  }
+}
+
+.m2-1 .m-notice > ul > li > a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 1px;
+  height: 22px;
+  background: #dadada;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul > li > a::after {
+    display: none;
+  }
+}
+
+.m2-1 .m-notice > ul > li > a.on {
+  color: #fff;
+  background: #4575ca;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul > li > a.on {
+    background: none;
+    color: #1d4491;
+    font-size: 0.9rem;
+    border-bottom: solid 1px #636363;
+  }
+}
+
+.m2-1 .m-notice > ul > li > a.on::after {
+  display: none;
+}
+
+.m2-1 .m-notice > ul > li ul {
+  position: absolute;
+  left: 0;
+  top: 2.9rem;
+  background: #fff;
+  width: 100%;
+  border-top: solid 1px #636363;
+  padding-top: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-notice > ul > li ul {
+    padding: 1.2rem 0;
+    position: static;
+    border-top: none;
+    border-bottom: solid 1px #dadada;
+  }
+}
+
+.m2-1 .m-notice > ul > li ul li {
+  padding: 0.3rem 0;
+  color: #666;
+  font-weight: 300;
+  font-size: 0.68rem;
+}
+
+.m2-1 .m-notice > ul > li ul a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  letter-spacing: -1px;
+  font-size: 0.75rem;
+  position: relative;
+  font-weight: normal;
+  color: #333;
+  margin-right: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: calc(100% - 90px);
+  padding-left: 25px;
+}
+
+.m2-1 .m-notice > ul > li ul a:hover {
+  text-decoration: underline;
+}
+
+.m2-1 .m-notice > ul > li ul a::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: #ccc;
+}
+
+.m2-1 .m-story ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-story ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.m2-1 .m-story li {
+  width: calc(100% / 3 - 10px);
+}
+
+.m2-1 .m-story li p {
+  overflow: hidden;
+}
+
+.m2-1 .m-story li p img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.m2-1 .m-story li p img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-story li {
+    width: 100%;
+    max-width: 285px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-1 .m-story {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .m2-1 {
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m2-1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-1 {
+    border-bottom: none;
+  }
+}
+
+.m2-2 {
+  max-width: 474px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .m2-2 {
+    max-width: 45%;
+    padding-left: 1rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m2-2 {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 1rem;
+    border-top: solid 1px #dadada;
+    border-bottom: solid 1px #dadada;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-2 {
+    border: none;
+    margin-top: 0;
+  }
+}
+
+.m2-2 > * {
+  position: relative;
+}
+
+.m2-2 .m-movie,
+.m2-2 .m-hnews {
+  max-width: 205px;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .m2-2 .m-movie,
+  .m2-2 .m-hnews {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-movie,
+  .m2-2 .m-hnews {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-movie,
+  .m2-2 .m-hnews {
+    width: 100%;
+  }
+}
+
+.m2-2 .m-popup,
+.m2-2 .m-sns {
+  max-width: 240px;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .m2-2 .m-popup,
+  .m2-2 .m-sns {
+    width: 50%;
+    padding-left: 1rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-popup,
+  .m2-2 .m-sns {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-popup,
+  .m2-2 .m-sns {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+.m2-2 .m-movie {
+  border-bottom: solid 1px #dadada;
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-movie .btn-more {
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-movie {
+    border: none;
+  }
+  .m2-2 .m-movie .btn-more {
+    margin-right: 0;
+  }
+}
+
+.m2-2 .m-movie a {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-movie a {
+    max-width: 285px;
+  }
+}
+
+.m2-2 .m-movie p {
+  overflow: hidden;
+}
+
+.m2-2 .m-movie p img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.m2-2 .m-movie p img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.m2-2 .m-movie p img {
+  max-width: 100%;
+  height: 145px;
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-movie p img {
+    height: auto;
+  }
+}
+
+.m2-2 .m-movie span {
+  position: relative;
+  padding: 0.8rem 0 0.8rem 1.5rem;
+  max-width: 200px;
+}
+
+.m2-2 .m-movie span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/ico_internet.png) no-repeat 0 0;
+}
+
+.m2-2 .m-popup ul {
+  width: 100%;
+}
+
+.m2-2 .m-popup .slick-arrow,
+.m2-2 .m-popup .popup-more {
+  position: absolute;
+  right: 0;
+  top: -2.1rem;
+  width: 17px;
+  height: 17px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat 0 0;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.m2-2 .m-popup .slick-prev {
+  right: 42px;
+  background-position: -369px -103px;
+}
+
+.m2-2 .m-popup .slick-next {
+  right: 22px;
+  background-position: -391px -103px;
+}
+
+.m2-2 .m-popup img {
+  width: 100%;
+  margin: 0 auto;
+  height: 187px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-popup img {
+    border-radius: 0;
+    width: 285px;
+  }
+}
+
+.m2-2 .m-popup .popup-more {
+  top: 1.25rem;
+  background-position: -457px -103px;
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-popup {
+    border-bottom: solid 1px #dadada;
+    border-left: solid 1px #dadada;
+  }
+}
+
+@media (max-width: 600px) {
+  .m2-2 .m-popup {
+    border: none;
+  }
+}
+
+.m2-2 .m-hnews {
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_teenager.png) no-repeat center 50px;
+}
+
+.m2-2 .m-hnews div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.m2-2 .m-hnews a {
+  text-align: center;
+  width: 90px;
+  height: auto;
+  background: #2e6fc7;
+  border-radius: 100%;
+  margin-top: 4rem;
+}
+
+.m2-2 .m-hnews a:nth-child(2) {
+  background: #26579a;
+}
+
+.m2-2 .m-hnews a:hover {
+  background: #ff5722;
+}
+
+.m2-2 .m-sns > div {
+  position: relative;
+  height: 250px;
+  background: #e6f0f3;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.7rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .m2-2 .m-sns > div {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .m2-2 .m-sns > div {
+    height: 340px;
+  }
+}
+
+.m2-2 .m-sns h3 {
+  position: absolute;
+  left: -99999px;
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+
+.m2-2 .m-sns ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.m2-2 .m-sns li {
+  margin-right: 0.15rem;
+}
+
+.m2-2 .m-sns li > a {
+  display: block;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  text-indent: -99999px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_sns.png) no-repeat 0 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.m2-2 .m-sns li > a.on {
+  background-position: 0 -36px;
+}
+
+.m2-2 .m-sns > div div {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 3rem;
+  max-width: 176px;
+  width: 100%;
+  background: #e6f0f3;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.m2-2 .m-sns > div div img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.m2-2 .m-sns > div div img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.m2-2 .m-sns > div div img {
+  height: 110px;
+}
+
+.m2-2 .m-sns > div div a {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .m2-2 .m-sns > div div {
+    max-width: 285px;
+    width: 100%;
+  }
+  .m2-2 .m-sns > div div img {
+    height: 190px;
+  }
+}
+
+.m2-2 .m-sns p {
+  font-size: 0.75rem;
+  padding-top: 0.5rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m2-2 .m-sns em {
+  font-style: normal;
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.m3-area {
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section02.gif) center 0;
+  padding: 2rem 0;
+}
+
+.m3-area > * {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .m3-area {
+    padding: 1rem;
+  }
+}
+
+.m3-area h2 {
+  position: relative;
+  display: block;
+  text-indent: -99999px;
+  color: transparent;
+  overflow: hidden;
+  height: 111px;
+}
+
+.m3-area h2::before, .m3-area h2::after {
+  content: '';
+  position: absolute;
+  height: 111px;
+}
+
+.m3-area h2::before {
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_02.png) no-repeat center 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 440px;
+}
+
+@media (min-width: 640px) and (max-width: 1000px) {
+  .m3-area h2::before {
+    width: 55%;
+    background-size: 100%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .m3-area h2::before {
+    background-size: 70%;
+  }
+}
+
+.m3-area h2::after {
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_tit02.png) no-repeat right bottom;
+  right: 0;
+  top: 0;
+  width: 300px;
+}
+
+@media (max-width: 1000px) {
+  .m3-area h2::after {
+    max-width: 40%;
+    background-size: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .m3-area h2::after {
+    display: none;
+  }
+}
+
+.m3-area h3 {
+  padding: 0 0 1rem 0;
+}
+
+.m3-area p {
+  margin-bottom: 1.3rem;
+  font-size: 0.78rem;
+  color: #555;
+  letter-spacing: -1px;
+}
+
+.m3-area article {
+  padding: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.m3-area .m3-1,
+.m3-area .m3-2 {
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .m3-area .m3-1,
+  .m3-area .m3-2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 0;
+  }
+}
+
+.m3-1 {
+  border: solid 2px #fff;
+}
+
+.m3-1 .m-minwon {
+  width: 40%;
+  min-width: 40%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .m3-1 .m-minwon {
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m3-1 .m-minwon {
+    width: 100%;
+  }
+}
+
+.m3-1 .m-minwon ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.m3-1 .m-minwon li {
+  width: calc(100% / 2.1);
+  margin: 0.2rem;
+  border-radius: 20px;
+  background: #b2b2b2;
+  overflow: hidden;
+  border: solid 1px #b2b2b2;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (max-width: 1000px) {
+  .m3-1 .m-minwon li {
+    width: calc(100% / 3.2);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .m3-1 .m-minwon li {
+    width: 45%;
+  }
+}
+
+.m3-1 .m-minwon li:hover {
+  background: #828282;
+  border-color: #828282;
+}
+
+.m3-1 .m-minwon li a {
+  white-space: nowrap;
+  position: relative;
+  display: block;
+  font-size: 0.73rem;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  letter-spacing: -1px;
+}
+
+.m3-1 .m-minwon li a::before {
+  content: url("https://api.iconify.design/octicon:plus.svg?color=%23fff&flip=horizontal&height=21");
+  position: absolute;
+  text-align: center;
+  left: -2rem;
+  top: 50%;
+  width: 2rem;
+  line-height: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.m3-1 .m-guide {
+  width: 60%;
+  min-width: 60%;
+  border-left: solid 1px #fff;
+}
+
+@media (max-width: 1200px) {
+  .m3-1 .m-guide {
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m3-1 .m-guide {
+    width: 100%;
+    border-top: solid 2px #fff;
+    border-left: none;
+  }
+}
+
+.m3-1 .m-guide ul {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m3-1 .m-guide ul li a {
+  text-align: center;
+  display: block;
+  font-size: 0.75rem;
+  padding-top: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.m3-1 .m-guide ul li a:hover::before {
+  background-position-y: -127px;
+  -webkit-animation: shakeY;
+          animation: shakeY;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  --animation-repeat: 1;
+}
+
+.m3-1 .m-guide ul li a::before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 98px;
+  height: 98px;
+  margin-bottom: 1rem;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_propose.png) no-repeat -602px 0;
+}
+
+.m3-1 .m-guide .slick-arrow {
+  position: relative;
+  display: block;
+  text-indent: -9999px;
+  min-width: 42px;
+  height: 42px;
+  background: transparent;
+}
+
+.m3-1 .m-guide .slick-arrow::before {
+  content: '';
+  position: absolute;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -371px -163px;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+}
+
+.m3-1 .m-guide .slick-next::before {
+  content: '';
+  background-position-x: -443px;
+}
+
+.m3-2 {
+  margin-top: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 {
+    margin-top: 0;
+  }
+}
+
+.m3-2 .m-traffic {
+  background: #597893 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_traffic.png) no-repeat right top;
+  background-size: 35%;
+  min-width: 20%;
+  padding: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-traffic {
+    padding: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-size: 10%;
+    background-position-x: 13%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-traffic h3 {
+    width: 20%;
+  }
+}
+
+.m3-2 .m-traffic h3,
+.m3-2 .m-traffic a {
+  color: #fff;
+}
+
+.m3-2 .m-traffic ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-traffic ul {
+    margin-top: 0;
+    width: 80%;
+  }
+}
+
+.m3-2 .m-traffic li {
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 0.3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.2rem;
+}
+
+.m3-2 .m-traffic li:last-child {
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-traffic li {
+    width: 33.3%;
+  }
+}
+
+.m3-2 .m-traffic li a {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.3rem;
+  background: #375d7e;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  letter-spacing: -1px;
+}
+
+.m3-2 .m-traffic li a:hover {
+  color: initial;
+  background: #fff;
+}
+
+.m3-2 .m-info {
+  min-width: 60%;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .m3-2 .m-info {
+    padding: 1rem 0.2rem;
+  }
+}
+
+.m3-2 .m-info ul {
+  margin-top: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (max-width: 640px) {
+  .m3-2 .m-info ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .m3-2 .m-info ul li {
+    width: 50%;
+  }
+}
+
+.m3-2 .m-info ul li {
+  margin-bottom: 1.5rem;
+}
+
+.m3-2 .m-info ul a {
+  font-size: 0.85rem;
+  display: block;
+  text-align: center;
+}
+
+.m3-2 .m-info ul a::after {
+  content: '';
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_info_m01.png) no-repeat 0 0;
+  display: block;
+  width: 124px;
+  height: 124px;
+  background-size: 100%;
+  margin: 0 auto;
+  margin-top: 0.7rem;
+}
+
+.m3-2 .m-info ul a:hover::after {
+  background-position-y: -210px;
+  margin-top: 0.7rem;
+  -webkit-animation: shakeY;
+          animation: shakeY;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  --animation-repeat: 1;
+}
+
+.m3-2 .m-service {
+  min-width: 20%;
+  padding: 0;
+  background: #95bdd9;
+}
+
+.m3-2 .m-service h3,
+.m3-2 .m-service a {
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-service {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.m3-2 .m-service div:nth-of-type(1) {
+  padding: 1rem;
+  background: #7395af;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-service div:nth-of-type(1) {
+    padding: 1.5rem;
+    width: 60%;
+  }
+}
+
+.m3-2 .m-service div:nth-of-type(1) li {
+  display: inline-block;
+  width: 48%;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-service div:nth-of-type(1) li {
+    width: 30%;
+  }
+}
+
+.m3-2 .m-service div:nth-of-type(1) li a {
+  display: block;
+  background: #5b7f9d;
+  border-radius: 20px;
+  padding: 0.4rem 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0.7rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-service div:nth-of-type(2) {
+    width: 40%;
+  }
+}
+
+.m3-2 .m-service div:nth-of-type(2) a {
+  display: block;
+  padding: 1rem;
+  height: 100%;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_welfare.png) no-repeat 90% 40%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (max-width: 1000px) {
+  .m3-2 .m-service div:nth-of-type(2) a {
+    padding: 1.5rem;
+  }
+}
+
+.m3-2 .m-service div:nth-of-type(2) a:hover {
+  background-color: #68a2ca;
+}
+
+.m4-area {
+  background: #ccdedc url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section03.png) no-repeat center 0;
+  padding: 1rem 0 2rem 0;
+}
+
+@media (max-width: 1200px) {
+  .m4-area {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+}
+
+.m4-1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .m4-1 {
+    width: 100%;
+  }
+}
+
+.m4-1 .m-title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_tit03.png) no-repeat center bottom;
+  height: 148px;
+  padding: 1rem 1rem 0 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
+
+@media (max-width: 1000px) {
+  .m4-1 .m-title {
+    background: none;
+    padding: 1rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title {
+    height: 230px;
+    padding-top: 5rem;
+    width: 100%;
+  }
+}
+
+.m4-1 .m-title div,
+.m4-1 .m-title ul {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title div,
+  .m4-1 .m-title ul {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 48%;
+            flex: 0 0 48%;
+  }
+}
+
+@media (max-width: 500px) {
+  .m4-1 .m-title div,
+  .m4-1 .m-title ul {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m4-1 .m-title div {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.m4-1 .m-title div a {
+  position: relative;
+  display: block;
+  text-indent: -99999px;
+}
+
+@media (max-width: 500px) {
+  .m4-1 .m-title div a {
+    display: none;
+  }
+}
+
+.m4-1 .m-title div a::before {
+  content: '';
+  position: absolute;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_03_visit.png) no-repeat 0 0;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 85px;
+}
+
+@media (max-width: 1000px) {
+  .m4-1 .m-title div a::before {
+    background-position-x: center;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title div a::before {
+    background-position-x: right;
+    background-size: 80%;
+  }
+}
+
+.m4-1 .m-title h2 {
+  position: relative;
+  text-indent: -99999px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 300px;
+          flex: 1 0 300px;
+}
+
+@media (max-width: 1000px) {
+  .m4-1 .m-title h2 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title h2 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.m4-1 .m-title h2::before {
+  content: '';
+  position: absolute;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_03.png) no-repeat 0 0;
+  left: 50%;
+  top: 0;
+  width: 300px;
+  height: 70px;
+  background-size: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 0.7rem;
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title h2::before {
+    width: 250px;
+  }
+}
+
+.m4-1 .m-title ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 1000px) {
+  .m4-1 .m-title ul {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .m4-1 .m-title ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .m4-1 .m-title ul {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+}
+
+.m4-1 .m-title ul li {
+  margin-left: 0.3rem;
+}
+
+.m4-1 .m-title ul a {
+  display: block;
+  width: 104px;
+  height: 104px;
+  border-radius: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+.m4-1 .m-title ul a:hover {
+  -webkit-animation: shakeY;
+          animation: shakeY;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  --animation-repeat: 1;
+}
+
+.m4-1 .m-title ul li:nth-child(1) a {
+  padding-top: 1rem;
+  background: #f07b42 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_enjoy.png) no-repeat -111px 0;
+}
+
+.m4-1 .m-title ul li:nth-child(1) a:hover {
+  background-color: #e74d23;
+}
+
+.m4-1 .m-title ul li:nth-child(2) a {
+  padding-top: 3.3rem;
+  background: #36ac37 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_enjoy.png) no-repeat 0 0;
+}
+
+.m4-1 .m-title ul li:nth-child(2) a:hover {
+  background-color: #109111;
+}
+
+.m4-2 {
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .m4-2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .m4-2 {
+    border-radius: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.m4-2 .m-festival {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 22%;
+          flex: 0 1 22%;
+  position: relative;
+  background: #ff5353;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .m4-2 .m-festival {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .m4-2 .m-festival {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .m4-2 .m-festival {
+    padding-bottom: 0;
+  }
+}
+
+.m4-2 .m-festival::before {
+  content: '';
+  position: absolute;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_festival.png) no-repeat 0 0;
+  width: 133px;
+  height: 163px;
+  top: 0;
+  right: 0;
+  opacity: 0.3;
+}
+
+.m4-2 .m-festival h3 {
+  padding: 1rem;
+  color: #fff;
+}
+
+.m4-2 .m-festival .m-slick {
+  position: relative;
+  margin: 0 auto;
+  width: 157px;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 600px) {
+  .m4-2 .m-festival .m-slick {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+.m4-2 .m-festival .m-slick a {
+  display: block;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.m4-2 .m-festival .m-slick a img {
+  border-radius: 100%;
+}
+
+.m4-2 .m-festival .m-slick p {
+  margin-top: 0.7rem;
+}
+
+.m4-2 .m-festival .m-slick .slick-arrow {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
+  display: block;
+  text-indent: -99999px;
+  color: transparent;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-position: -382px -229px;
+  background: #ff5353 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -382px -229px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.m4-2 .m-festival .m-slick .slick-arrow:hover {
+  background-color: #b52121;
+}
+
+@media (max-width: 500px) {
+  .m4-2 .m-festival .m-slick .slick-arrow {
+    left: 0;
+    -webkit-transform: translateX(-160%);
+            transform: translateX(-160%);
+    top: 3rem;
+  }
+}
+
+.m4-2 .m-festival .m-slick .slick-next {
+  background-position: -431px -229px;
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
+}
+
+@media (max-width: 500px) {
+  .m4-2 .m-festival .m-slick .slick-next {
+    left: 50%;
+    -webkit-transform: translateX(230%);
+            transform: translateX(230%);
+  }
+}
+
+.m4-2 .m-festival .btn-more {
+  right: 1rem !important;
+  position: absolute;
+  right: 0;
+  top: 1.1rem;
+}
+
+.m4-2 .m-festival .btn-more a {
+  display: block;
+  text-indent: -99999px;
+  color: transparent;
+  overflow: hidden;
+  width: 17px;
+  height: 17px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_more_main.png) no-repeat 0 0;
+}
+
+.m4-2 .m-festival .btn-more a {
+  background-position: 0 100%;
+}
+
+.m4-2 .m-tour {
+  width: 56%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .m4-2 .m-tour {
+    width: 55%;
+  }
+}
+
+@media (max-width: 600px) {
+  .m4-2 .m-tour {
+    width: 100%;
+    padding: 0 0 1rem 0;
+  }
+}
+
+.m4-2 .m-tour strong {
+  color: #359f3b;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.m4-2 .m-tour .btn-more {
+  right: 1rem !important;
+  position: absolute;
+  right: 0;
+  top: 1.1rem;
+}
+
+.m4-2 .m-tour .btn-more a {
+  display: block;
+  text-indent: -99999px;
+  color: transparent;
+  overflow: hidden;
+  width: 17px;
+  height: 17px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_more_main.png) no-repeat 0 0;
+}
+
+.m4-2 .m-tour h3 {
+  margin-top: -0.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .m4-2 .m-tour h3 {
+    padding-left: 1rem;
+  }
+}
+
+.m4-2 .m-tour .tour-slick {
+  position: relative;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .m4-2 .m-tour .tour-slick {
+    margin-bottom: 1rem;
+  }
+}
+
+.m4-2 .m-tour .tour-slick a {
+  width: 166px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.m4-2 .m-tour .tour-slick a:hover p::before {
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  left: 0;
+  top: 0;
+  width: 166px;
+  height: 166px;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.m4-2 .m-tour .tour-slick a:hover::before, .m4-2 .m-tour .tour-slick a:hover::after {
+  content: '';
+  position: absolute;
+  left: calc(166px / 2 - 20px);
+  top: 83px;
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  -webkit-animation: rotateW 1.5s;
+          animation: rotateW 1.5s;
+}
+
+.m4-2 .m-tour .tour-slick a:hover::after {
+  width: 1px;
+  height: 40px;
+  top: calc(166px / 2 - 20px);
+  left: 83px;
+}
+
+@-webkit-keyframes rotateW {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateW {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.m4-2 .m-tour .tour-slick a img {
+  border-radius: 100%;
+}
+
+.m4-2 .m-tour .tour-slick p {
+  margin-top: 0.7rem;
+}
+
+.m4-2 .m-tour .tour-slick p span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: #703030;
+}
+
+.m4-2 .m-tour .tour-slick .slick-arrow {
+  position: relative;
+  display: block;
+  text-indent: -9999px;
+  min-width: 42px;
+  height: 42px;
+  background: transparent;
+}
+
+.m4-2 .m-tour .tour-slick .slick-arrow::before {
+  content: '';
+  position: absolute;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -371px -163px;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+}
+
+.m4-2 .m-tour .tour-slick .slick-next::before {
+  content: '';
+  background-position-x: -443px;
+}
+
+.m4-2 .m-r-tour {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 22%;
+          flex: 0 1 22%;
+  background: #af884c url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_walk.png) no-repeat center 20%;
+}
+
+@media (max-width: 1000px) {
+  .m4-2 .m-r-tour {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    background-position: 20% 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.m4-2 .m-r-tour h3 {
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1rem;
+}
+
+.m4-2 .m-r-tour ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 6rem;
+  padding: 0 1rem 1rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .m4-2 .m-r-tour ul {
+    margin-top: 1rem;
+    width: 60%;
+  }
+}
+
+.m4-2 .m-r-tour li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  margin: 0.2rem 0;
+  border-radius: 20px;
+  background: #8b6c3d;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: block;
+}
+
+.m4-2 .m-r-tour li:hover {
+  background: #6d4200;
+}
+
+.m4-2 .m-r-tour li a {
+  white-space: nowrap;
+  position: relative;
+  display: block;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 0.73rem;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 1px #fff;
+  background: #fff;
+  letter-spacing: -1px;
+}
+
+.m4-2 .m-r-tour li a:hover {
+  border: solid 1px #6d4200;
+}
+
+.m4-2 .m-r-tour li a::before {
+  content: url("https://api.iconify.design/octicon:plus.svg?color=%23fff&flip=horizontal&height=21");
+  position: absolute;
+  text-align: center;
+  left: -2rem;
+  top: 50%;
+  width: 2rem;
+  line-height: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.m5-area {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5c97+50,37959d+50 */
+  background: #1e5c97;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #1e5c97), color-stop(50%, #37959d));
+  background: linear-gradient(to right, #1e5c97 50%, #37959d 50%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5c97', endColorstr='#37959d',GradientType=1 );
+  /* IE6-9 */
+  position: relative;
+}
+
+.m5-area::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 55px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.m5-1 {
+  width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .m5-1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .m5-1 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.m5-1 h3 {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: -2px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.m5-1 h3:before {
+  content: '';
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_text_service.png) no-repeat 0 0;
+  display: inline-block;
+  width: 40px;
+  vertical-align: middle;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.m5-1 article {
+  width: 33.3%;
+  padding: 0.5rem 2rem 1.5rem 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #1e5c97;
+}
+
+@media (min-width: 640px) and (max-height: 1000px) {
+  .m5-1 article {
+    padding: 0.5rem 1rem 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .m5-1 article {
+    width: 100%;
+    position: relative;
+  }
+  .m5-1 article::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 55px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.m5-1 article:nth-of-type(2) {
+  background: #344976;
+}
+
+.m5-1 article:nth-of-type(2) h3:before {
+  background-position: 0 -121px;
+}
+
+.m5-1 article:nth-of-type(3) {
+  background: #37959d;
+}
+
+.m5-1 article:nth-of-type(3) h3:before {
+  background-position: 0 -242px;
+}
+
+.m5-1 ul {
+  margin-top: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.m5-1 ul li {
+  width: 50%;
+}
+
+@media (min-width: 640px) and (max-width: 1000px) {
+  .m5-1 ul li {
+    width: 100%;
+  }
+}
+
+.m5-1 a {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 300;
+  position: relative;
+  padding: 0.3rem 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+.m5-1 a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.m6-area {
+  background: #efefef;
+  padding: 1rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .m6-area {
+    padding: 1rem;
+  }
+}
+
+.m6-area ul {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .m6-area ul {
+    width: 100%;
+  }
+}
+
+.m6-area .slick-arrow {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 21px;
+          flex: 1 0 21px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  color: transparent;
+  overflow: hidden;
+  height: 21px;
+}
+
+.m6-area .slick-arrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  height: 21px;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/common/btn_footer_bnnr2.png) no-repeat 0 0;
+}
+
+.m6-area .slick-next::before {
+  background-position: -41px 0;
+  width: 20px;
+}
+
+footer {
+  background: #3b414d;
+}
+
+footer > div > div {
+  width: 1400px;
+  margin: 0 auto;
+  font-weight: 300;
+  color: #d8d8d8;
+}
+
+@media screen and (max-width: 1400px) {
+  footer > div > div {
+    width: 100%;
+  }
+}
+
+.f-1 {
+  background: #2f343e;
+}
+
+@media screen and (max-width: 860px) {
+  .f-1 {
+    background: none;
+  }
+}
+
+.f-1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .f-1 div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.f-1 li:first-child a::before {
+  display: none;
+}
+
+.f-1 a {
+  color: #d8d8d8;
+  font-size: 0.7rem;
+  display: block;
+}
+
+.f-1 a::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: #d8d8d8;
+  margin: 0 0.5rem;
+}
+
+.f-1 .f-guide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .f-1 .f-guide {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .f-1 .f-guide {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .f-1 .f-guide {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 0;
+  }
+  .f-1 .f-guide li:nth-child(2) a {
+    color: #fef968;
+  }
+}
+
+@media (max-width: 600px) {
+  .f-1 .f-guide {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .f-1 .f-guide li {
+    padding: 3px 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+.f-1 .f-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .f-1 .f-link {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .f-1 .f-link {
+    width: 100%;
+    background: #3b414d;
+  }
+  .f-1 .f-link li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.3%;
+            flex: 1 1 33.3%;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .f-1 .f-link {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .f-1 .f-link {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .f-1 .f-link li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+
+.f-1 .f-link a {
+  display: block;
+  background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/sitelink_icon.gif) no-repeat right center;
+  padding-right: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .f-1 .f-link a {
+    border: solid 1px #646464;
+    padding: 0.7rem 1rem;
+    background-origin: content-box;
+  }
+}
+
+.f-1 .f-link a::before {
+  height: 14px;
+  background: #646464;
+}
+
+@media (max-width: 1000px) {
+  .f-1 .f-link a::before {
+    display: none;
+  }
+}
+
+.f-2 {
+  background: #3b414d;
+  padding: 2rem 0;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .f-2 {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .f-2 {
+    padding-top: 1rem;
+  }
+}
+
+.f-2 > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.f-2 > div > div a {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .f-2 > div > div a {
+    display: inline-block;
+    background: #282828;
+    padding: 5px 10px;
+    margin: 2px;
+    color: #fff;
+  }
+  .f-2 > div > div a span {
+    font-weight: 500;
+    color: #ff6e56;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .f-2 > div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .f-2 > div > div,
+  .f-2 > div ul {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.f-2 address {
+  font-style: normal;
+  margin-bottom: 0.2rem;
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .f-2 address {
+    display: inline-block;
+  }
+}
+
+.f-2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 860px) {
+  .f-2 ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.f-2 a {
+  display: block;
+  color: #d8d8d8;
+}
+
+@media (max-width: 1000px) {
+  .f-2 img {
+    width: 90%;
+  }
+}
+
+.f-2 .call-center {
+  padding-right: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .f-2 .call-center {
+    display: none;
+  }
+}
+
+.f-2 .call-center a {
+  position: relative;
+  padding-left: 2.8rem;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.f-2 .call-center a:hover {
+  text-decoration: none;
+}
+
+.f-2 .call-center a strong {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 0.8rem;
+}
+
+.f-2 .call-center a span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffab58;
+}
+/*# sourceMappingURL=layout.css.map */

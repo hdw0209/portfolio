@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>강진군도서관</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="../../js/sal.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/sal.css" />
+        <link rel="stylesheet" href="./css/default.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo-area">
+                <h1><a href="#1">강진군 도서관</a></h1>
+                <div class="login-area">
+                    <ul>
+                        <li><a href="#1">처음으로</a></li>
+                        <li class="login"><a href="#1">로그인</a></li>
+                        <li class="join"><a href="#1">회원가입</a></li>
+                        <li><a href="#1">사이트맵</a></li>
+                    </ul>
+                </div>
+                <div class="sch-area">
+                    <fieldset>
+                        <label for="sch-in"></label>
+                        <input type="text" id="sch-in" placeholder="검색어를 입력하세요" />
+                        <button type="submit">검색하기</button>
+                    </fieldset>
+                </div>
+                <button type="button" class="side-open">메뉴보기</button>
+            </div>
+            <nav>
+                <h2>상단메뉴</h2>
+                <ul id="gnb">
+                    <li>
+                        <a href="#1">도서관 소개</a>
+                        <ul>
+                            <li><a href="#1">인사말</a></li>
+                            <li><a href="#1">도서관연혁</a></li>
+                            <li><a href="#1">시설현황</a></li>
+                            <li><a href="#1">자료현황</a></li>
+                            <li><a href="#1">도서관조직도</a></li>
+                            <li><a href="#1">이용서비스헌장</a></li>
+                            <li><a href="#1">도서관 규정</a></li>
+                            <li><a href="#1">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">이용안내</a>
+                        <ul>
+                            <li><a href="#1">휴관일</a></li>
+                            <li><a href="#1">실별 안내</a></li>
+                            <li><a href="#1">대출회원증발급안내</a></li>
+                            <li><a href="#1">작은도서관 현황</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">이용자 마당</a>
+                        <ul>
+                            <li><a href="#1">공지사항</a></li>
+                            <li><a href="#1">자유게시판</a></li>
+                            <li><a href="#1">비대면 도서 대출 예약</a></li>
+                            <li><a href="#1">건의사항</a></li>
+                            <li><a href="#1">희망도서 신청</a></li>
+                            <li><a href="#1">설문조사</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">도서정보</a>
+                        <ul>
+                            <li><a href="#1">자료검색</a></li>
+                            <li><a href="#1">대출/반납조회</a></li>
+                            <li><a href="#1">추천도서</a></li>
+                            <li><a href="#1">신착자료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">프로그램</a>
+                        <ul>
+                            <li><a href="#1">동아리 안내</a></li>
+                            <li><a href="#1">갤러리</a></li>
+                            <li><a href="#1">우리들 서평단</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">도서관 행사</a>
+                        <ul>
+                            <li><a href="#1">프로그램 신청</a></li>
+                            <li><a href="#1">프로그램 신청 확인</a></li>
+                            <li><a href="#1">월간 행사표</a></li>
+                            <li><a href="#1">행사관련갤러리</a></li>
+                            <li><a href="#1">보도자료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#1">관련사이트</a>
+                        <ul>
+                            <li><a href="#1">국립도서관</a></li>
+                            <li><a href="#1">공공도서관</a></li>
+                            <li><a href="#1">기타도서관</a></li>
+                            <li><a href="#1">도서목록관련</a></li>
+                            <li><a href="#1">도서교육프로그램</a></li>
+                            <li><a href="#1">전자책도서관</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="gnb-bg"></div>
+                <button type="button" class="side-close">메뉴닫기</button>
+            </nav>
+            <div class="dim"></div>
+        </header>
+        <div class="mcon1">
+            <article class="m-sch" data-sal="slide-up">
+                <h3>자료검색</h3>
+                <p>지식정보의 샘 <span>강진군도서관</span></p>
+                <fieldset>
+                    <label for="m-sch-input">자료검색</label>
+                    <input type="text" id="m-sch-input" placeholder="검색어를 입력하세요." />
+                    <button type="submit">검색하기</button>
+                </fieldset>
+            </article>
+            <div class="mcon1-2">
+                <article class="m-calendar" data-sal="slide-up">
+                    <h3>달력</h3>
+                    <div>
+                        <button type="submit">이전달</button>
+                        <p>2020.5</p>
+                        <button type="submit">다음달</button>
+                    </div>
+                    <table>
+                        <caption>
+                            달력
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>SUN</th>
+                                <th>MON</th>
+                                <th>TUE</th>
+                                <th>WED</th>
+                                <th>THU</th>
+                                <th>FRI</th>
+                                <th>SAT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>4</td>
+                                <td class="event holiday">5</td>
+                                <td>6</td>
+                                <td class="event">7</td>
+                                <td class="event">8</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td class="event">10</td>
+                                <td class="event">11</td>
+                                <td class="event">12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td class="event">17</td>
+                                <td class="event">18</td>
+                                <td class="event">19</td>
+                                <td class="event">20</td>
+                                <td class="event">21</td>
+                                <td class="event">22</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td class="event today">25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article class="m-schedule" data-sal="slide-up">
+                    <h3>일정</h3>
+                    <dl>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                        <dt>05-06<br />(수)</dt>
+                        <dd>
+                            <p>이동도서관</p>
+                            <span>성전 93연대</span>
+                        </dd>
+                    </dl>
+                    <div>
+                        <p>이달의 휴관일 안내 : <strong>5</strong></p>
+                        <button type="button">일정더보기</button>
+                    </div>
+                </article>
+                <article class="m-banner m-slick" data-sal="slide-up">
+                    <h3>팝업</h3>
+                    <ul class="slick-banner">
+                        <li>
+                            <a href="#1"><img src="https://www.gjlib.go.kr/attach/popup/main/20200221103911PRtVdlrCWwJ0Q3fAPxiw.png" alt="배너" /></a>
+                        </li>
+                        <li>
+                            <a href="#1"><img src="https://www.gjlib.go.kr/attach/popup/main/20200429112656gjlnEGGqSYQUhquoQBCd.jpg" alt="배너" /></a>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="btn-prev">이전</button>
+                        <button class="btn-pause">정지</button>
+                        <button class="btn-play">재생</button>
+                        <button class="btn-next">다음</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <section class="mcon2">
+            <h2>최근 게시물</h2>
+            <article class="m-notice" data-sal="slide-up">
+                <h3>공지사항</h3>
+                <ul>
+                    <li>
+                        <a href="#1">
+                            <strong>도서관 새로 들어온 책(408권) 안내</strong>
+                            <span>2020-05-22</span>
+                            <p>지금 도서관에 오시면 408권의 새로운 책을 만날 수 있습니다. 종합자료실: 222권 이동도서관: 140권 아동자료실: 46권 도서목록은 첨부파일에 있습니다. 이...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#1">인문독서 아카데미 수강생 모집 <span>2020-05-22</span></a>
+                    </li>
+                    <li>
+                        <a href="#1">도서관 종합자료실 대출 안내 <span>2020-05-22</span></a>
+                    </li>
+                    <li>
+                        <a href="#1">비대면 도서 대출 서비스 운영 <span>2020-05-22</span></a>
+                    </li>
+                    <li>
+                        <a href="#1">도서관 새로 들어온 책(716권) 안내 <span>2020-05-22</span></a>
+                    </li>
+                    <li>
+                        <a href="#1">도서관 새로 들어온 책(408권) 안내 <span>2020-05-22</span></a>
+                    </li>
+                </ul>
+                <button type="button" class="btn-more">더보기</button>
+            </article>
+            <article class="m-gallery" data-sal="slide-up">
+                <h3>행사갤러리</h3>
+                <ul>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/201912171133242eOw7957nIyR9vcCWUXe.jpg" alt="사진" /></a>
+                    </li>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/201912111735238jDUw54zpy6ZnvtEXBZV.jpg" alt="사진" /></a>
+                    </li>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/20191211171239vq5EbewgrKez018mW42y.jpg" alt="사진" /></a>
+                    </li>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/2019121113323818WOZKIMOcqh5UxDs5KZ.jpg" alt="사진" /></a>
+                    </li>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/20191204112417WEWhiccj3fFXeb4Tn1L0.jpg" alt="사진" /></a>
+                    </li>
+                    <li>
+                        <a href="#1"><img src="https://www.gjlib.go.kr/attach/board/7/main/201912171133242eOw7957nIyR9vcCWUXe.jpg" alt="사진" /></a>
+                    </li>
+                </ul>
+                <button type="button" class="btn-more">더보기</button>
+            </article>
+        </section>
+        <section class="mcon3" data-sal="slide-up">
+            <h3>바로가기 메뉴</h3>
+            <ul>
+                <li><a href="#1">도서관 회원가입</a></li>
+                <li><a href="#1">도서관 자료현황</a></li>
+                <li><a href="#1">대출내역조회</a></li>
+                <li><a href="#1">대출회원증 발급안내</a></li>
+                <li><a href="#1">희망도서신청</a></li>
+                <li><a href="#1">스마트체험도서관</a></li>
+                <li><a href="#1">프로그램안내</a></li>
+                <li><a href="#1">전자책도서관</a></li>
+            </ul>
+        </section>
+        <section class="mcon4">
+            <h2>문화행사 프로그램 정보</h2>
+            <article class="m-culture" data-sal="slide-up">
+                <h3>문화행사프로그램</h3>
+                <div><a href="#1">등록된 행사가 없습니다.</a></div>
+            </article>
+            <article class="m-program" data-sal="slide-up">
+                <h3>프로그램접수현황</h3>
+                <ul>
+                    <li>
+                        <a href="#1">
+                            <strong>접수완료</strong>
+                            <p><span>2019년 작가초청강연 책방 BOOK 콘서트</span> 2019-05-15 ~ 2019-05-15</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#1">
+                            <strong>접수완료</strong>
+                            <p><span>2019년 작가초청강연 책방 BOOK 콘서트</span> 2019-05-15 ~ 2019-05-15</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#1">
+                            <strong>접수완료</strong>
+                            <p><span>2019년 작가초청강연 책방 BOOK 콘서트</span> 2019-05-15 ~ 2019-05-15</p>
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="btn-more">더보기</button>
+            </article>
+            <article class="m-time" data-sal="slide-up">
+                <h3>운영시간</h3>
+                <div>
+                    <h4><strong>2020.05.26</strong> 금일은 도서관 운영일입니다.</h4>
+                    <dl>
+                        <dt>평일</dt>
+                        <dd><strong>종합자료실 :</strong>09:00 ~ 22:00</dd>
+                        <dd><strong>아동자료실 :</strong>09:00 ~ 18:00</dd>
+                        <dd><strong>디지털자료실 :</strong>09:00 ~ 22:00</dd>
+                        <dd><strong>열람실 :</strong>08:00 ~ 익일 01:00</dd>
+                        <dt>주말</dt>
+                        <dd><strong>종합자료실 :</strong>09:00 ~ 17:00</dd>
+                        <dd><strong>아동자료실 :</strong>09:00 ~ 17:00</dd>
+                        <dd><strong>디지털자료실 :</strong>09:00 ~ 19:00</dd>
+                        <dd><strong>열람실 :</strong>08:00 ~ 익일 01:00</dd>
+                    </dl>
+                    <p><strong>휴관일</strong>관공서<br />휴관일</p>
+                </div>
+            </article>
+        </section>
+        <section class="mcon5" data-sal="slide-up">
+            <h3>강진군도서관 <strong>도서안내</strong></h3>
+            <div class="m-tabs">
+                <ul>
+                    <li>
+                        <a href="#1">신간도서(일반)</a>
+                        <ul>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/209/16320900.jpg?type=m1&udate=20200421" alt="도서" />
+                                    <p>
+                                        <strong>좌절의 기술 : 철학은 어떻게 삶을 버티게 하는가</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/223/16322346.jpg?type=m1&udate=20200509" alt="도서" />
+                                    <p>
+                                        <strong>좌절의 기술</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/140/501/14050128.jpg?type=m1&udate=20191227" alt="도서" />
+                                    <p>
+                                        <strong>삶을 버티게 하는가</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/209/16320900.jpg?type=m1&udate=20200421" alt="도서" />
+                                    <p>
+                                        <strong>어떻게 삶을 버티게 하는가</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn-more">더보기</button>
+                    </li>
+                    <li>
+                        <a href="#1">신간도서(아동)</a>
+                        <ul>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/162/631/16263104.jpg?type=m1&udate=20200224" alt="도서" />
+                                    <p>
+                                        <strong>파도 너머 푸른 꿈</strong>
+                                        출판 : 소년한길 :토마토하우...(충격주의)왠지 이상한 동...
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/140/316/14031662.jpg?type=m1&udate=20190109" alt="도서" />
+                                    <p>
+                                        <strong>좌절의 기술</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/209/16320900.jpg?type=m1&udate=20200421" alt="도서" />
+                                    <p>
+                                        <strong>어떻게 삶을 버티게</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#1">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/209/16320900.jpg?type=m1&udate=20200421" alt="도서" />
+                                    <p>
+                                        <strong>좌절의 기술 : 철학은 어떻게 삶을 버티게 하는가</strong>
+                                        출판 : 어크로스거의 모든 것의 역사 거의 모든 것의 역사
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn-more">더보기</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="mcon6 m-slick" data-sal="slide-up">
+            <div>
+                <h3>관련사이트</h3>
+                <div class="btn-group">
+                    <button class="btn-pause">정지</button>
+                    <button class="btn-play">재생</button>
+                    <button class="btn-prev2">이전</button>
+                    <button class="btn-next2">다음</button>
+                </div>
+            </div>
+            <ul class="slick-site">
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/20190306135326lqLh4WlgXrw6zhh75FcW.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/201903061354189T8ksS0AJwQUsBJJsnfk.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/201903061354595FFIM9LCeg1RhDGj7GIG.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/20190306135546wPV0rOrTAuxESyVGHZTt.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/20190306135326lqLh4WlgXrw6zhh75FcW.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/20190306135326lqLh4WlgXrw6zhh75FcW.jpg" alt="배너" /></a>
+                </li>
+                <li>
+                    <a href="#1"><img src="https://www.gjlib.go.kr/attach/banner/main/20190306135625ZWMdw3nCYhzATFKRDUJS.jpg" alt="배너" /></a>
+                </li>
+            </ul>
+        </section>
+        <footer data-sal="slide-up">
+            <div>
+                <ul>
+                    <li><a href="#1">개인정보처리방침</a></li>
+                    <li><a href="#1">통함도서서비스 이용약관</a></li>
+                    <li><a href="#1">찾아오시는 길</a></li>
+                    <li><a href="#1">사이트맵</a></li>
+                </ul>
+                <select name="sitelink" id="sitelink">
+                    <option value="1" selected="selected">관련사이트</option>
+                    <option value="2">관련사이트</option>
+                    <option value="3">관련사이트</option>
+                    <option value="4">관련사이트</option>
+                    <option value="5">관련사이트</option>
+                    <option value="6">관련사이트</option>
+                </select>
+            </div>
+            <address>
+                <p>(59229) 전라남도 강진군 강진읍 남문길 10</p>
+                <span>Tel. 061-430-3842</span> Fax 061-430-3839
+            </address>
+            <p>Copyright(c) 2020 강진군도서관. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function () {
+                    var context = this,
+                        args = arguments;
+                    var later = function () {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // 윈도우 리사이즈 될때 열린 메뉴 닫기
+            $(window).on(
+                'resize',
+                debounce(function (e) {
+                    var width = $(this).width();
+
+                    if (width >= 1024) {
+                        // 메뉴 원상태로 복구
+                        $('.login-area').removeClass('on');
+                        $('nav > ul').find('li').removeClass('on');
+                        $('nav > ul > li > ul').removeAttr('style');
+                        $('nav > ul > li').find('a').removeClass('on');
+                        $('nav').removeClass('on');
+                        $('.dim').removeClass('on');
+                    }
+
+                    bindEvent();
+                }, 200)
+            );
+
+            function bindEvent() {
+                var width = $(window).width();
+
+                if (width >= 1024) {
+                    $('nav > ul > li').find('a').off('click');
+                } else {
+                    $('nav > ul > li')
+                        .find('a')
+                        .on('click', function () {
+                            var el = $(this);
+                            el.toggleClass('on');
+                            var menu = el.next();
+
+                            // 메뉴 닫힘/열림 처리
+                            if (menu.is(':visible')) {
+                                menu.hide().find('ul').hide();
+                            } else {
+                                menu.slideDown('fast');
+                            }
+
+                            // 같은 레벨 메뉴 닫기
+                            menu.parent().siblings().children().not('a').slideUp('fast');
+
+                            // 같은 레벨 a 태그 on 클래스 빼기
+                            el.parent().siblings().children('a').removeClass('on');
+                        });
+                }
+            }
+
+            bindEvent();
+
+            //gnb nav
+            var nav = $('#gnb, #gnb > li');
+            nav.on('mouseenter focusin', function () {
+                $(this).addClass('on');
+            });
+            nav.on('mouseleave focusout', function () {
+                $(this).removeClass('on');
+            });
+
+            // side nav
+            $('.side-open').on('click', function () {
+                $('.login-area').addClass('on');
+                $('nav').addClass('on');
+                $('.dim').addClass('on');
+            });
+            $('.side-close').on('click', function () {
+                $('.login-area').removeClass('on');
+                $('nav').removeClass('on');
+                $('.dim').removeClass('on');
+            });
+
+            //slick
+            $('.m-slick').each(function () {
+                var mSlick = $(this).children('ul');
+                var btnPlay = $(this).find('.btn-play');
+                var btnPause = $(this).find('.btn-pause');
+
+                btnPlay.on('click', function () {
+                    mSlick.slick('slickPlay');
+                    btnPause.show();
+                    $(this).hide();
+                });
+                btnPause.on('click', function () {
+                    mSlick.slick('slickPause');
+                    btnPlay.show();
+                    $(this).hide();
+                });
+            });
+
+            //slick-banner
+            $('.slick-banner').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplaySpeed: 1000,
+                fade: true,
+                prevArrow: '.btn-prev',
+                nextArrow: '.btn-next',
+            });
+
+            //slick-site
+            $('.slick-site').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplaySpeed: 800,
+                prevArrow: '.btn-prev2',
+                nextArrow: '.btn-next2',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                        },
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        },
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                        },
+                    },
+                ],
+            });
+
+            //m-tab
+            var tabs = $('.m-tabs').each(function () {
+                var tab = $(this).children('ul');
+                var tabBtn = tab.children('li').children('a');
+                var content = tabBtn.nextAll();
+
+                tabBtn.click(function () {
+                    content.hide();
+                    $(this).nextAll().show();
+
+                    tabBtn.removeClass('on');
+                    $(this).addClass('on');
+                });
+
+                content.hide();
+                tabBtn.eq(0).click();
+            });
+            sal();
+        </script>
+    </body>
+</html>

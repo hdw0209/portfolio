@@ -1,0 +1,1568 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+@import 'reset';
+@import 'mixin';
+@import 'variables';
+
+/* html {
+    @include mq(mobile) {
+        font-size: 22px;
+    }
+} */
+header {
+    .logo-area {
+        position: relative;
+        box-sizing: border-box;
+        width: $desktop;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem auto;
+        @include mq(tablet) {
+            width: 100%;
+            padding: 1rem;
+            margin: 0;
+        }
+    }
+    h1 {
+        order: 2;
+        a {
+            position: relative;
+            display: block;
+            width: 9.9rem;
+            height: 2.05rem;
+            overflow: hidden;
+            text-indent: -9999px;
+            &:before {
+                content: '';
+                background: #fff url(https://www.gjlib.go.kr/img/main/logo.jpg) no-repeat 0 0;
+                position: absolute;
+                background-size: 100%;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    .login-area {
+        order: 1;
+        font-size: 0.6rem;
+        font-weight: 300;
+        @include mq(tablet) {
+            display: none;
+        }
+        &.on {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20rem;
+            font-weight: 400;
+            background-color: #0188bf;
+            background-image: linear-gradient(120deg, #0188bf 10%, #3b8820 90%);
+            padding: 1.35rem;
+            box-sizing: border-box;
+            z-index: 20;
+            @media (max-width: 500px) {
+                width: calc(100% - 50px);
+            }
+            a {
+                color: #fff;
+                font-size: 0.9rem;
+            }
+        }
+        ul {
+            display: flex;
+        }
+        li {
+            margin-right: 1rem;
+            @include mq(tablet) {
+                display: none;
+            }
+            &::before {
+                display: inline-block;
+            }
+            &:first-child {
+                ::before {
+                    content: '\f015';
+                    @include font-awesome;
+                    color: #666;
+                    margin-right: 0.2rem;
+                }
+            }
+            &:nth-child(2) {
+                @include mq(tablet) {
+                    display: block;
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        width: 1px;
+                        height: 1rem;
+                        background: rgba(#fff, 0.5);
+                        vertical-align: -0.15rem;
+                        margin-left: 0.8rem;
+                    }
+                }
+                ::before {
+                    content: '\f2f6';
+                    @include font-awesome;
+                    color: #666;
+                    margin-right: 0.2rem;
+                    @include mq(tablet) {
+                        color: #fff;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                @include mq(tablet) {
+                    display: block;
+                }
+                ::before {
+                    content: '\f007';
+                    @include font-awesome;
+                    color: #666;
+                    margin-right: 0.2rem;
+                    @include mq(tablet) {
+                        color: #fff;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                ::before {
+                    content: '\f0e8';
+                    @include font-awesome;
+                    color: #666;
+                    margin-right: 0.2rem;
+                }
+            }
+        }
+    }
+    .sch-area {
+        order: 3;
+        padding-bottom: 0.3rem;
+        box-sizing: border-box;
+        border-bottom: 2px solid #000;
+        @include mq(tablet) {
+            display: none;
+        }
+        input {
+            border: none;
+            font-size: 0.8rem;
+            &::placeholder {
+                font-size: 0.6rem;
+                font-weight: 300;
+                color: #999;
+            }
+        }
+        button {
+            position: relative;
+            width: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-indent: -9999px;
+            &::after {
+                content: '\f002';
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-indent: 0;
+                @include font-awesome;
+            }
+        }
+    }
+    .side-open,
+    .side-close {
+        display: none;
+        background: none;
+        @include mq(tablet) {
+            display: block;
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            right: 1rem;
+            top: 1.2rem;
+            font-family: f;
+            &::before {
+                content: '\f0c9';
+                @include font-awesome;
+                font-size: 1.5rem;
+                color: #333;
+            }
+        }
+    }
+    .side-close {
+        @include mq(tablet) {
+            top: -2.6rem;
+            &::before {
+                content: '\f00d';
+                color: #fff;
+            }
+        }
+    }
+    .dim {
+        display: none;
+        &.on {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+    }
+}
+//상단메뉴
+header nav {
+    position: relative;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    @include mq(tablet) {
+        display: none;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 3rem;
+        height: 1px;
+        width: 100%;
+        background: #e5e5e5;
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+    &.on {
+        display: block;
+        @include mq(tablet) {
+            position: absolute;
+            right: 0;
+            top: 3.7rem;
+            width: 20rem;
+            height: auto;
+            z-index: 30;
+        }
+        @media (max-width: 500px) {
+            width: calc(100% - 50px);
+        }
+        #gnb.on ul,
+        #gnb.on li.on ul {
+            height: auto;
+        }
+    }
+    h2 {
+        @include blind;
+    }
+    #gnb {
+        position: relative;
+        width: $desktop;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: -1px;
+        height: 3rem;
+        @include mq(tablet) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            flex-wrap: wrap;
+            background: #fff;
+            width: 100%;
+            height: auto;
+            text-align: left;
+        }
+    }
+    //대메뉴
+    #gnb > li {
+        width: 100%;
+        position: relative;
+        &:last-child::after {
+            display: none;
+            @include mq(tablet) {
+                display: block;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 1.5rem;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 2px;
+            background-color: #bbb;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+            @include mq(tablet) {
+                content: url('https://api.iconify.design/gridicons:plus-small.svg?color=%23999&height=1.2rem');
+                right: 1rem;
+                vertical-align: -0.125em;
+                width: 1rem;
+                height: 1rem;
+                box-shadow: none;
+                background: none;
+            }
+        }
+        > a {
+            display: block;
+            padding: 1rem 0;
+            box-sizing: border-box;
+            @include mq(tablet) {
+                padding: 1rem;
+                color: #252565;
+                border-top: 1px solid #ddd;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 0;
+                left: 0;
+                bottom: 0;
+                transition: all 0.2s;
+                @include mq(tablet) {
+                    height: 4px;
+                }
+            }
+        }
+        &.on > a,
+        & > a.on {
+            color: #006eae;
+            position: relative;
+            @include mq(tablet) {
+                color: #252565;
+            }
+            &::before {
+                height: 4px;
+                background: #008ac3;
+                @include mq(tablet) {
+                    background: #003198;
+                }
+            }
+        }
+        &.on ul {
+            background: #f5f5f5;
+        }
+    }
+    //서브메뉴
+    #gnb ul {
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        font-weight: 400;
+        color: #868686;
+        box-sizing: border-box;
+        z-index: 10;
+        @include mq(tablet) {
+            display: none;
+            position: static;
+            height: auto;
+        }
+        a {
+            display: inline-block;
+            font-size: 0.7rem;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: all 0.2s;
+            box-sizing: border-box;
+            @include mq(tablet) {
+                display: block;
+                font-size: 0.8rem;
+                padding: 0.8rem 1rem;
+                border-top: 1px solid #e7e7e7;
+                background: #f7f7f7;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                bottom: 0;
+                transition: all 0.2s;
+                @include mq(tablet) {
+                    display: none;
+                }
+            }
+            &::after {
+                @include mq(tablet) {
+                    content: url('https://api.iconify.design/gridicons:chevron-right.svg?color=%23ccc&height=0.9rem');
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    transform: translateY(-50%);
+                }
+            }
+            &:hover {
+                color: #58b1d3;
+                @include mq(tablet) {
+                    color: #333;
+                    font-weight: 500;
+                }
+                &::before {
+                    background: #58b1d3;
+                    @include mq(tablet) {
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+    #gnb > li:nth-child(odd) ul {
+        border-left: solid 1px #e5e5e5;
+        border-right: solid 1px #e5e5e5;
+        @include mq(tablet) {
+            border: none;
+        }
+    }
+    #gnb.on ul {
+        overflow: visible;
+        padding: 0.7rem 0;
+        @include mq(tablet) {
+            padding: 0;
+        }
+    }
+    #gnb.on ul,
+    #gnb.on li.on ul {
+        height: 13rem;
+    }
+    #gnb.on + .gnb-bg {
+        position: absolute;
+        left: 0;
+        top: 3.05rem;
+        width: 100%;
+        height: 13.05rem;
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+        z-index: 9;
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+}
+//메인
+.mcon1 {
+    background: url('https://www.gjlib.go.kr/img/main/bg.jpg') no-repeat center 0;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    @include mq(mobile) {
+        padding: 0;
+    }
+    > * {
+        width: $desktop;
+        margin: 0 auto;
+        @include mq(tablet) {
+            width: 100%;
+        }
+    }
+    h3,
+    caption {
+        @include blind;
+    }
+    .m-sch {
+        padding-top: 2.5rem;
+        box-sizing: border-box;
+        @include mq(mobile) {
+            padding: 2rem 2rem 0 2rem;
+        }
+        p {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1.5rem;
+            @include mq(mobile) {
+                margin-bottom: 1rem;
+                font-size: 1.6rem;
+            }
+            span {
+                @include mq(mobile) {
+                    display: block;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+        fieldset {
+            position: relative;
+            background: #fff;
+            margin: 0 auto;
+            width: 60%;
+            padding: 1.2rem 1rem;
+            box-sizing: border-box;
+            border-radius: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            @include mq(tablet) {
+                padding: 1rem;
+                width: 70%;
+            }
+            @include mq(mobile) {
+                padding: 1rem 0.5rem;
+                width: 100%;
+                font-size: 0.8rem;
+            }
+        }
+        label {
+            padding: 0 2.5rem 0 1rem;
+            width: 30%;
+            @include mq(mobile) {
+                font-size: 0.7rem;
+                padding: 0 0.5rem;
+            }
+        }
+        input {
+            width: 70%;
+            padding-right: 2rem;
+            box-sizing: border-box;
+            @include mq(mobile) {
+                font-size: 0.7rem;
+            }
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-indent: -9999px;
+            text-align: center;
+            &::after {
+                content: '\f002';
+                position: absolute;
+                left: 0.1rem;
+                top: 0.1rem;
+                text-indent: 0;
+                font-size: 1.2rem;
+                @include font-awesome;
+            }
+        }
+    }
+}
+.mcon1-2 {
+    display: flex;
+    height: 17rem;
+    margin-top: 1.5rem;
+    @include mq(tablet) {
+        padding: 0 3rem;
+    }
+    @include mq(mobile) {
+        flex-flow: column;
+        padding: 0 1rem;
+        height: auto;
+    }
+
+    > * {
+        flex: 0 0 33.3%;
+        @include mq(tablet) {
+            flex: 0 0 50%;
+        }
+        @include mq(mobile) {
+            flex: 1 1 100%;
+        }
+    }
+}
+.m-calendar {
+    color: #fff;
+    background-color: #018ac1;
+    background-image: linear-gradient(120deg, #018ac1 0, #70be50 100%);
+    padding: 1rem;
+    box-sizing: border-box;
+    @include mq(tablet) {
+        display: none;
+    }
+    @include mq(mobile) {
+        display: block;
+    }
+    > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1rem;
+        button {
+            position: relative;
+            // text-indent: -9999px;
+            color: transparent;
+            overflow: hidden;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: solid 1px rgba(255, 255, 255, 0.3);
+            border-radius: 100%;
+            &::after {
+                content: '\f053';
+                @include font-awesome;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 100%;
+                height: auto;
+                transform: translateY(-50%);
+                color: #fff;
+                font-size: 0.7rem;
+                text-indent: 0;
+            }
+            &:nth-of-type(2)::after {
+                content: '\f054';
+                right: 0;
+            }
+        }
+    }
+    table {
+        font-weight: 300;
+        width: 100%;
+        border: 1px;
+        border-collapse: collapse;
+    }
+    thead {
+        font-size: 0.65rem;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        th {
+            text-align: center;
+            padding-bottom: 0.5rem;
+        }
+    }
+    td {
+        font-size: 0.75rem;
+        padding: 0.5rem 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        &.event::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+        }
+        &.holiday::before {
+            background: rgba(190, 20, 20, 0.5);
+        }
+        &.today::before {
+            background: none;
+            border: solid 1px #fff;
+        }
+    }
+}
+.m-schedule {
+    background: #fff;
+    font-size: 0.8rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    @include mq(mobile) {
+        padding: 1rem;
+        border: solid 1px #d6d6d6;
+    }
+    dl {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        height: 12rem;
+        overflow: hidden;
+        overflow-y: auto;
+        margin-bottom: 0.5rem;
+        dt,
+        dd {
+            margin-bottom: 0.5rem;
+        }
+        dt {
+            flex: 0 0 25%;
+            font-size: 0.7rem;
+            text-align: center;
+            background: #71bc55;
+            color: #fff;
+            line-height: 1.5;
+            padding: 0.8rem 0;
+        }
+        dd {
+            flex: 0 0 75%;
+            padding-left: 1rem;
+            box-sizing: border-box;
+            span {
+                display: inline-block;
+                font-size: 0.7rem;
+                color: #999;
+                &::before {
+                    content: '#';
+                    display: inline-block;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+    > div {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-weight: 500;
+        strong {
+            color: #f28230;
+        }
+        button {
+            font-weight: 500;
+        }
+        button::after {
+            content: '\f055';
+            @include font-awesome;
+            display: inline-block;
+            margin-left: 0.2rem;
+            color: #ccc;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+    }
+}
+.m-banner {
+    height: 17rem;
+    position: relative;
+    overflow: hidden;
+
+    @include mq(mobile) {
+        height: auto;
+        overflow: visible;
+        margin-top: 1rem;
+    }
+    ul {
+        li {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: 100%;
+            min-height: 17rem;
+            @include mq(mobile) {
+                width: 100%;
+            }
+        }
+    }
+    > div {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        background: #6c7481;
+        border-radius: 2rem;
+        padding: 0.5rem 1rem;
+        button {
+            color: #fff;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-indent: -9999px;
+            text-align: center;
+            width: 1rem;
+            height: 1rem;
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0.1rem;
+                text-align: center;
+                width: 100%;
+                height: auto;
+                text-indent: 0;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                @include font-awesome;
+            }
+        }
+        .btn-prev::after {
+            content: '\f053';
+        }
+        .btn-next::after {
+            content: '\f054';
+        }
+        .btn-pause::after {
+            content: '\f04c';
+        }
+        .btn-play {
+            display: none;
+            &::after {
+                content: '\f04b';
+            }
+        }
+    }
+}
+.mcon2 {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+    padding: 1.5rem 0;
+    justify-content: space-between;
+    @include mq(tablet) {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    @include mq(mobile) {
+        flex-flow: column;
+    }
+
+    > * {
+        flex: 0 1 48%;
+        position: relative;
+        @include mq(mobile) {
+            flex: 0 1 100%;
+        }
+    }
+    h2 {
+        @include blind;
+    }
+    h3 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+        letter-spacing: -1px;
+        border-bottom: 1px solid #b1b1b1;
+        box-shadow: 0 1px 0 #e0e0e0;
+        padding-bottom: 0.7rem;
+    }
+    .btn-more {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.3rem;
+        height: 1.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        color: transparent;
+        overflow: hidden;
+
+        &::after {
+            content: '\f055';
+            @include font-awesome;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ccc;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+    }
+}
+.m-notice {
+    ul {
+        font-size: 0.75rem;
+        letter-spacing: -1px;
+    }
+    li {
+        position: relative;
+        padding: 0.6rem 0;
+        @include mq(mobile) {
+            padding: 0.4rem 0;
+        }
+        &:first-child {
+            border-bottom: 1px solid #e0e0e0;
+            margin: 0.5rem 0;
+            padding-bottom: 0.7rem;
+        }
+    }
+    strong {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    span {
+        position: absolute;
+        right: 0;
+        top: 0.6rem;
+        font-size: 0.6rem;
+        letter-spacing: 0;
+        color: #666;
+        @include mq(mobile) {
+            top: 0.4rem;
+        }
+    }
+    p {
+        font-size: 0.7rem;
+        line-height: 1.5;
+    }
+}
+.m-gallery {
+    @include mq(mobile) {
+        margin-top: 1rem;
+    }
+    ul {
+        margin-top: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    li {
+        margin-bottom: 0.5rem;
+        text-align: center;
+        flex: 1 0 33.3%;
+        @include mq(tablet) {
+            flex: 0 1 48%;
+        }
+        &:nth-child(5),
+        &:nth-child(6) {
+            @include mq(tablet) {
+                display: none;
+            }
+        }
+    }
+    a {
+        display: block;
+        min-height: 100%;
+    }
+    img {
+        @include mq(tablet) {
+            width: 100%;
+            min-height: 7.5rem;
+        }
+    }
+}
+.mcon3 {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    h3 {
+        @include blind;
+    }
+    ul {
+        width: $desktop;
+        margin: 1.5rem auto;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.73rem;
+        @include mq(tablet) {
+            width: 100%;
+            justify-content: space-around;
+            padding: 1.5rem;
+            margin: 0;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+        letter-spacing: -1px;
+        &::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_1.jpg');
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+    }
+    li:nth-child(2) a::before {
+        content: url('https://www.gjlib.go.kr/img/main/btn_2.jpg');
+    }
+    li:nth-child(3) a::before {
+        content: url('https://www.gjlib.go.kr/img/main/btn_3.jpg');
+    }
+    li:nth-child(4) {
+        @include mq(mobile) {
+            display: none;
+        }
+        a::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_4.jpg');
+        }
+    }
+    li:nth-child(5) {
+        @include mq(mobile) {
+            display: none;
+        }
+        a::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_5.jpg');
+        }
+    }
+    li:nth-child(6) {
+        @include mq(tablet) {
+            display: none;
+        }
+        a::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_6.jpg');
+        }
+    }
+    li:nth-child(7) {
+        @include mq(tablet) {
+            display: none;
+        }
+        a::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_7.jpg');
+        }
+    }
+    li:nth-child(8) {
+        @include mq(tablet) {
+            display: none;
+        }
+        a::before {
+            content: url('https://www.gjlib.go.kr/img/main/btn_8.jpg');
+        }
+    }
+}
+.mcon4 {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+    padding: 2rem 0;
+    justify-content: space-between;
+    @include mq(tablet) {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    @include mq(mobile) {
+        flex-flow: column;
+    }
+    > * {
+        flex: 0 1 31%;
+        position: relative;
+        @include mq(tablet) {
+            flex: 0 1 48%;
+        }
+        @include mq(mobile) {
+            flex: 0 1 100%;
+        }
+    }
+    h2 {
+        @include blind;
+    }
+    h3 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+        letter-spacing: -1px;
+        border-bottom: 1px solid #b1b1b1;
+        box-shadow: 0 1px 0 #e0e0e0;
+        padding-bottom: 0.7rem;
+    }
+    .btn-more {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.3rem;
+        height: 1.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        color: transparent;
+        overflow: hidden;
+        &::after {
+            content: '\f055';
+            @include font-awesome;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ccc;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+    }
+}
+.m-culture {
+    h3 {
+        border: none;
+        box-shadow: none;
+    }
+    div {
+        padding: 1rem;
+        height: 12rem;
+        background: url('https://www.gjlib.go.kr/img/main/banner_img1.jpg') no-repeat 0 0;
+        background-size: cover;
+    }
+    a {
+        color: #fff;
+        font-size: 0.9rem;
+    }
+}
+.m-program {
+    border-bottom: solid 1px #efefef;
+    @include mq(tablet) {
+        margin-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    li {
+        margin-top: 0.7rem;
+        &:first-child {
+            margin-top: 1rem;
+        }
+    }
+    a {
+        display: flex;
+        align-items: center;
+    }
+    strong {
+        color: #fff;
+        background: #888;
+        font-size: 0.75rem;
+        flex: 0 0 23%;
+        text-align: center;
+        padding: 1rem 0;
+        margin-right: 0.5rem;
+    }
+    p {
+        font-size: 0.7rem;
+        color: #666;
+        line-height: 1.5;
+    }
+    span {
+        display: block;
+        color: #333;
+        font-size: 0.8rem;
+        letter-spacing: -1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        @include mq(mobile) {
+            width: 78%;
+        }
+    }
+}
+.m-time {
+    @include mq(tablet) {
+        display: none;
+    }
+    @include mq(mobile) {
+        display: block;
+        margin-top: 1.5rem;
+    }
+    div {
+        background: url('https://www.gjlib.go.kr/img/main/clock.jpg') no-repeat 0 0;
+        margin-top: 1rem;
+        padding-left: 5rem;
+        font-size: 0.7rem;
+        position: relative;
+        line-height: 1.3;
+        @include mq(mobile) {
+            font-size: 0.6rem;
+            padding-left: 4rem;
+            background-size: 3rem;
+        }
+    }
+    h4 {
+        font-weight: 400;
+        letter-spacing: -1px;
+        color: #f08233;
+        strong {
+            font-size: 0.85rem;
+            color: #333;
+            @include mq(mobile) {
+                font-size: 0.75rem;
+            }
+        }
+    }
+    dl {
+        margin-top: 0.5rem;
+        dt {
+            color: #138cc3;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        strong {
+            display: inline-block;
+            width: 6rem;
+            color: #138cc3;
+            font-weight: 400;
+            @include mq(mobile) {
+                width: 4.5rem;
+            }
+        }
+    }
+    p {
+        font-size: 0.85rem;
+        position: absolute;
+        left: 0.8rem;
+        bottom: 2rem;
+        @include mq(mobile) {
+            font-size: 0.7rem;
+            left: 0.5rem;
+        }
+        strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+.mcon5 {
+    position: relative;
+    margin-bottom: 2rem;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 17rem;
+        left: 0;
+        top: 10rem;
+        background: #f2f2f2;
+        z-index: -1;
+        border-bottom: solid 1px #dadada;
+        @include mq(mobile) {
+            height: 15rem;
+        }
+    }
+    h3 {
+        text-align: center;
+        position: absolute;
+        color: #fff;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: -1px;
+        line-height: 1.3;
+        strong {
+            font-weight: 500;
+            @include mq(mobile) {
+                display: block;
+            }
+        }
+        @include mq(mobile) {
+            top: 1rem;
+        }
+    }
+    div {
+        width: $desktop;
+        margin: 0 auto;
+        padding: 6rem 2.5rem 0 2.5rem;
+        background: url('https://www.gjlib.go.kr/img/main/book_bg_big.jpg') no-repeat 0 0;
+        @include mq(tablet) {
+            width: 100%;
+            padding: 6rem 1.5rem 0 1.5rem;
+        }
+    }
+
+    div > ul {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        height: 19rem;
+        padding: 2rem;
+        @include mq(mobile) {
+            display: flex;
+            height: 17rem;
+            padding: 1rem;
+            justify-content: space-around;
+        }
+        > li > a {
+            font-size: 0.85rem;
+            display: inline-block;
+            border-bottom: solid 1px #ccc;
+            padding: 0.7rem 0;
+            font-weight: 500;
+            line-height: -1px;
+            @include mq(mobile) {
+                border: none;
+            }
+            &::after {
+                content: '\f054';
+                @include font-awesome;
+                font-size: 0.75rem;
+                margin-left: 0.6rem;
+                @include mq(mobile) {
+                    display: none;
+                }
+            }
+            &.on {
+                color: #0289c1;
+            }
+        }
+
+        > li ul {
+            position: absolute;
+            left: 9rem;
+            top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            width: calc(100% - 14rem);
+            @include mq(mobile) {
+                left: 1rem;
+                top: 4rem;
+                width: calc(100% - 2rem);
+            }
+            li {
+                width: 100%;
+                padding: 0 1rem;
+                @include mq(mobile) {
+                    padding: 0 0.5rem;
+                }
+                &:nth-child(4) {
+                    @include mq(tablet) {
+                        display: none;
+                    }
+                }
+                &:nth-child(3) {
+                    @media (max-width: 910px) {
+                        display: none;
+                    }
+                }
+            }
+            a {
+                display: block;
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+            p {
+                line-height: 1.5;
+                margin-top: 1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                height: 2rem;
+                padding: 0 0.5rem;
+                strong {
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 1rem;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 11rem;
+            border: solid 1px #dfdfdf;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            @include mq(tablet) {
+                height: 8rem;
+            }
+        }
+        button {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: transparent;
+            overflow: hidden;
+            width: 2.2rem;
+            height: 2.2rem;
+            border: solid 1px rgba(0, 0, 0, 0.2);
+            border-radius: 100%;
+            @include mq(mobile) {
+                display: none;
+            }
+            &::after {
+                content: '\f054';
+                @include font-awesome;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 100%;
+                height: auto;
+                color: #999;
+                transform: translateY(-50%);
+                font-size: 1rem;
+                text-indent: 0;
+            }
+        }
+    }
+}
+.mcon6 {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+    padding: 1rem 0;
+    justify-content: space-between;
+    @include mq(tablet) {
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+
+    > div {
+        h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+            letter-spacing: -1px;
+            padding-bottom: 0.5rem;
+        }
+    }
+    .btn-group {
+        height: 1rem;
+        button {
+            color: #fff;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-indent: -9999px;
+            text-align: center;
+            width: 1rem;
+            height: 1rem;
+            background: #ccc;
+            border-radius: 100%;
+            padding: 0.8rem;
+            box-sizing: border-box;
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0.3rem;
+                text-align: center;
+                width: 100%;
+                height: auto;
+                text-indent: 0;
+                font-size: 0.7rem;
+                line-height: 1rem;
+                @include font-awesome;
+            }
+        }
+        .btn-prev2::after {
+            content: '\f053';
+        }
+        .btn-next2::after {
+            content: '\f054';
+        }
+        .btn-pause {
+            background: #999;
+            &::after {
+                content: '\f04c';
+            }
+        }
+        .btn-play {
+            background: #999;
+            display: none;
+            &::after {
+                content: '\f04b';
+            }
+        }
+    }
+    ul {
+        display: flex;
+        max-width: 80%;
+        overflow: hidden;
+        @media (max-width: 600px) {
+            max-width: 50%;
+        }
+    }
+    li {
+        padding: 0 0.3rem;
+    }
+    img {
+        width: 100%;
+        min-height: 2.9rem;
+        border: solid 1px #dadada;
+    }
+}
+footer {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2.5rem;
+        left: 0;
+        top: 0;
+        border-top: 1px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        background: #f6f6f6;
+        z-index: -1;
+        @include mq(mobile) {
+            display: none;
+        }
+    }
+    > * {
+        width: $desktop;
+        margin: 0 auto;
+        @include mq(tablet) {
+            width: 100%;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq(tablet) {
+            padding-right: 0;
+        }
+        @include mq(mobile) {
+            display: none;
+        }
+        ul {
+            display: flex;
+            font-size: 0.8rem;
+            li {
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: #b9b9b9;
+                }
+            }
+            a {
+                padding: 0 1rem;
+                @include mq(tablet) {
+                    padding: 0 0.5rem;
+                }
+            }
+            li:first-child {
+                a {
+                    padding-left: 0;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    select {
+        font-size: 0.75rem;
+        width: 10rem;
+        height: 2.5rem;
+        border-left: 1px solid #e3e3e3;
+        border-right: 1px solid #e3e3e3;
+        padding: 0 0.7rem;
+        color: #666;
+        @include mq(tablet) {
+            width: 8rem;
+            padding: 0 0.5rem;
+        }
+    }
+    address {
+        font-size: 0.75rem;
+        font-style: normal;
+        margin-top: 2rem;
+        color: #666;
+        @include mq(mobile) {
+            margin-top: 1rem;
+            border-top: 1px solid #e3e3e3;
+            padding-top: 1rem;
+            text-align: center;
+        }
+        p {
+            display: inline;
+            @include mq(mobile) {
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+        }
+        span {
+            padding: 0 1rem;
+            margin: 0 1rem;
+            display: inline-block;
+            border-left: solid 1px #ccc;
+            border-right: solid 1px #ccc;
+            @include mq(mobile) {
+                border-left: none;
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+    > p {
+        font-size: 0.6rem;
+        margin: 1rem auto 2rem;
+        color: #999;
+        @include mq(mobile) {
+            text-align: center;
+        }
+    }
+}

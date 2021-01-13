@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scal=1.0, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>슈퍼컴퓨팅-반응형</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./slick/slick.min.js"></script>
+        <script type="text/javascript" src="./js/sal.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+        <link rel="stylesheet" href="./css/default.css" />
+        <link rel="stylesheet" href="./css/fontawesome/css/all.css" />
+        <link rel="stylesheet" href="./css/layout.css" />
+        <link rel="stylesheet" href="./css/tablet.css" media="all and (max-width:1200px)" />
+        <link rel="stylesheet" href="./css/mobile.css" media="all and (max-width:860px)" />
+        <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+        <link rel="stylesheet" type="text/css" href="./css/sal.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    </head>
+    <body>
+        <div class="dim"></div>
+
+        <header>
+            <div class="sm-area">
+                <ul>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">ENGLISH</a></li>
+                    <li><a href="#">SITEMAP</a></li>
+                </ul>
+            </div>
+            <div class="header-area">
+                <div>
+                    <h1><a href="#">국가슈퍼컴퓨팅센터</a></h1>
+                    <nav class="gnb-area" id="mySidenav">
+                        <h2 class="hide">대메뉴</h2>
+                        <ul class="menu">
+                            <!--현재메뉴 표시할경우 on-->
+                            <li class="on">
+                                <a href="#">소개</a>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <p>소개</p>
+                                            우리나라 과학기술자의 꿈을 실현<br />
+                                            인류의 밝은 미래를 위해!
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">소개</a>
+                                                <ul>
+                                                    <!--현재메뉴 표시할경우 on-->
+                                                    <li><a href="#a" class="on">인사말</a></li>
+                                                    <li><a href="#a">연혁</a></li>
+                                                    <li><a href="#a">임무/기능</a></li>
+                                                    <li><a href="#a">조직도/인력</a></li>
+                                                    <li><a href="#a">찾아오시는 길</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">국가슈퍼컴퓨터</a>
+                                                <ul>
+                                                    <li><a href="#a">누리온(NURION)</a></li>
+                                                    <li><a href="#a">뉴론(NEURON)</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#a">자원지원</a>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <p>자원지원</p>
+                                            우리나라 과학기술자의 꿈을 실현<br />
+                                            인류의 밝은 미래를 위해!
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">혁신지원 프로그램(무상)</a>
+                                                <ul>
+                                                    <li><a href="#a">혁신지원 안내</a></li>
+                                                    <li><a href="#a">혁신지원 신청</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">계정발급(유상+초보)</a>
+                                                <ul>
+                                                    <li><a href="#a">자원신청 안내</a></li>
+                                                    <li><a href="#a">요금안내</a></li>
+                                                    <li><a href="#a">요금계산기</a></li>
+                                                    <li><a href="#a">OTP 안내</a></li>
+                                                    <li><a href="#a">계정발급</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#a">기술지원</a>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <p>기술지원</p>
+                                            우리나라 과학기술자의 꿈을 실현<br />
+                                            인류의 밝은 미래를 위해!
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">기술지원</a>
+                                                <ul>
+                                                    <li><a href="#a">FAQ</a></li>
+                                                    <li><a href="#a">Q&amp;A</a></li>
+                                                    <li><a href="#a">도움말</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">성능최적화 및 병렬화</a>
+                                                <ul>
+                                                    <li><a href="#a">성능최적화 및 병렬화 안내</a></li>
+                                                    <li><a href="#a">성능최적화 및 병렬화 프로그램</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">지침서</a>
+                                                <ul>
+                                                    <li><a href="#a">하드웨어</a></li>
+                                                    <li><a href="#a">소프트웨어</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#a">연구성과 및 통계</a>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <p>연구성과 및 통계</p>
+                                            우리나라 과학기술자의 꿈을 실현<br />
+                                            인류의 밝은 미래를 위해!
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">연구성과</a>
+                                                <ul>
+                                                    <li><a href="#a">대표성과</a></li>
+                                                    <li><a href="#a">주요성과</a></li>
+                                                    <li><a href="#a">전체성과</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">통계</a>
+                                                <ul>
+                                                    <li><a href="#a">미정</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#a">커뮤니티</a>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <p>커뮤니티</p>
+                                            우리나라 과학기술자의 꿈을 실현<br />
+                                            인류의 밝은 미래를 위해!
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">공지사항</a>
+                                                <ul>
+                                                    <li><a href="#a">공지사항</a></li>
+                                                    <li><a href="#a">장애공지</a></li>
+                                                    <li><a href="#a">점검공지</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">자료실</a>
+                                                <ul>
+                                                    <li><a href="#a">홍보 자료</a></li>
+                                                    <li><a href="#a">신청서 양식</a></li>
+                                                    <li><a href="#a">시스템 지침서</a></li>
+                                                    <li><a href="#a">소프트웨어 지침서</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button type="button" class="close-btn"><i class="fas fa-times"></i></button>
+                    </nav>
+                    <button type="button" onclick="location.href='#' " class="sch-btn"><i class="fas fa-search"></i></button>
+                    <button type="button" class="open-btn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+            <div class="menu-bg"></div>
+        </header>
+        <div class="visual-area">
+            <div class="img-box">
+                <div>
+                    <button class="prev-btn"><i class="fas fa-angle-left"></i></button>
+                    <div class="slide-area">
+                        <div>
+                            <a href="#"><img src="./images/main-img.png" alt="메인" class="img" /></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="./images/main-img-02.png" alt="메인" class="img" /></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="./images/main-img-03.png" alt="메인" class="img" /></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="./images/main-img-04.png" alt="메인" class="img" /></a>
+                        </div>
+                        <div>
+                            <a href="#"><img src="./images/main-img-05.png" alt="메인" class="img" /></a>
+                        </div>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="txt-box">
+                <div>
+                    <span>Nurion</span> <strong>누리온</strong>
+                    <p>슈퍼컴퓨터 5호기</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#" class="on"><i class="fas fa-book-reader"></i>소개</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-tasks"></i>스펙</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-eye"></i>VR체험</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="news-area" data-sal="slide-up">
+            <div>
+                <section class="news1">
+                    <h2>
+                        <a href="#a">공지사항</a><a href="#a" class="btn-more"><i class="fas fa-ellipsis-h"></i></a>
+                    </h2>
+                    <ul>
+                        <li>
+                            <h3><a href="#a">2019년도 슈퍼컴퓨터 5호기 초고성능 컴퓨팅 R&D 혁신지원 프로그램...</a></h3>
+                            <p>KISTI는 초고성능컴퓨팅 (High Performance Computing, 이하 HPC) 육성법에 근거하여 국가 차원의 초고성능컴퓨팅을 육성...<span>2019-09-06</span></p>
+                        </li>
+                        <li>
+                            <h3><a href="#a">2019년도 1차 RnD 혁신지원 프로그램 선정결과</a></h3>
+                            <p>슈퍼컴퓨팅응용센터입니다. 첨부와 같이 2019년도 1차 RnD 혁신지원 프로그램 선정결과를 공지합니다.<span>2019-09-06</span></p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="news2">
+                    <div>
+                        <h2>
+                            <a href="#">장애공지</a><a href="#" class="btn-more"><i class="fas fa-ellipsis-h"></i></a>
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3><a href="#">[NURION] 슈퍼컴퓨터 5호기 누리온 긴급 점검(복구완료)_서비스 가능</a></h3>
+                                <p>
+                                    작업 내용 : 시스템 안정성 향상을 위한 병렬파일시스템 점검<br />
+                                    일 시 : 2019. 07. 12(금) 20시까지
+                                    <span>2019-09-06</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="news2-2">
+                            <a href="#"><i class="fas fa-bars"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="ico-area" data-sal="slide-up">
+            <ul>
+                <li>
+                    <a href="#a"><img src="./images/icon-01.png" /><br />계약신청 안내</a>
+                </li>
+                <li>
+                    <a href="#a"><img src="./images/icon-02.png" /><br />상담신청 안내</a>
+                </li>
+                <li>
+                    <a href="#a"><img src="./images/icon-03.png" /><br />성과물등록 안내</a>
+                </li>
+                <li>
+                    <a href="#a"><img src="./images/icon-04.png" /><br />누리온 지침서</a>
+                </li>
+                <li>
+                    <a href="#a"><img src="./images/icon-05.png" /><br />KISTI</a>
+                </li>
+                <li>
+                    <a href="#a"><img src="./images/icon-06.png" /><br />과학데이터스쿨</a>
+                </li>
+            </ul>
+        </div>
+        <section class="resch-area" data-sal="slide-up">
+            <div>
+                <h2>연구성과</h2>
+                <ul class="resch-list">
+                    <li>
+                        <h3><a href="#">카본나노튜브 및 리포솜 기반 약물 복합체 물성</a></h3>
+                        <span>저널게재 / SCI / 2017년 / 단국대 이환규</span>
+                    </li>
+                    <li>
+                        <h3><a href="#">단일층 MoS2의 grain coundary에 생기는</a></h3>
+                        <span>저널게재 / SCI / 2016년 / 포항공대 임지순</span>
+                    </li>
+                </ul>
+                <button type="button" onclick="location.href='#' ">연구성과 더보기</button>
+            </div>
+            <ul class="resch-img">
+                <li>
+                    <img src="./images/img-01.png" />
+                    <span>저널게제 / SCI / 2018년 / 인하대 김광용</span>
+                    <h3><a href="#">유동 박리 제어를 위한 유체진동기 내/외부</a></h3>
+                    <em>2019.08.08</em>
+                </li>
+                <li>
+                    <img src="./images/img-02.png" />
+                    <span>저널게제 / SCI / 2018년 / 인하대 김광용</span>
+                    <h3><a href="#">유동 박리 제어를 위한 유체진동기 내/외부</a></h3>
+                    <em>2019.08.08</em>
+                </li>
+            </ul>
+        </section>
+        <section class="photo-area" data-sal="slide-up">
+            <h2>보도 및 홍보자료</h2>
+            <ul>
+                <li>
+                    <img src="./images/img-03.png" />
+                    <h3><a href="#">KISTI 창립 57주년 "산학연과 함께하는 지식생태계 혁신 주체로 울창한 숲 이루자"</a></h3>
+                    <p>5월 17일 KISTI 본원에서 창립기념식 개최 사내 밴드 공연 선보이며 즐거운 축하 자리 이어져</p>
+                    <em>2019.08.08</em>
+                </li>
+                <li>
+                    <img src="./images/img-04.png" />
+                    <h3>
+                        <a href="#">세계 흐름은 '오픈 사이언스'··· <br />KISTI 공유 연구데이터플랫폼으로 '발맞춤'</a>
+                    </h3>
+                    <p>5월 17일 KISTI 본원에서 창립기념식 개최 사내 밴드 공연 선보이며 즐거운 축하 자리 이어져</p>
+                    <em>2019.08.08</em>
+                </li>
+                <li>
+                    <img src="./images/img-05.png" />
+                    <h3><a href="#">제2회 KISTI 과학기술정보포럼 개최</a></h3>
+                    <p>5월 17일 KISTI 본원에서 창립기념식 개최 사내 밴드 공연 선보이며 즐거운 축하 자리 이어져</p>
+                    <em>2019.08.08</em>
+                </li>
+            </ul>
+        </section>
+        <section class="supercom-area">
+            <div>
+                <h2>슈퍼컴퓨터 사용현황</h2>
+                <div class="com-list1">
+                    <ul>
+                        <li data-sal="slide-up" style="--sal-duration: 1s;">
+                            <h3>185,046,589</h3>
+                            총 시스템 서비스 제공 시간
+                        </li>
+                        <li data-sal="slide-up" data-sal-delay="200" style="--sal-duration: 1s;">
+                            <h4>3,146,589</h4>
+                            총 수행 작업 개수
+                        </li>
+                        <li data-sal="slide-up" data-sal-delay="300" style="--sal-duration: 1s;">
+                            <p>994</p>
+                            수행 중 작업수
+                        </li>
+                        <li data-sal="slide-up" data-sal-delay="400" style="--sal-duration: 1s;">
+                            <p>65</p>
+                            대기 중 작업수
+                        </li>
+                    </ul>
+                    <div class="graph" data-sal="slide-up" data-sal-delay="200" style="--sal-duration: 1s;">
+                        <p>시스템 사용율</p>
+                        <span>Last 2 Hours</span>
+                        <img src="./images/graph.png" />
+                    </div>
+                </div>
+                <div>
+                    <ul class="com-list2" data-sal="slide-up" data-sal-delay="500">
+                        <li>
+                            <img src="./images/graph-01.png" />
+                            <p>5,468</p>
+                            활용노드
+                        </li>
+                        <li>
+                            <img src="./images/graph-02.png" />
+                            <p>2,145</p>
+                            유휴노드
+                        </li>
+                        <li>
+                            <img src="./images/graph-03.png" />
+                            <p>33</p>
+                            장애노드
+                        </li>
+                        <li>
+                            <img src="./images/graph-04.png" />
+                            <p>787</p>
+                            최대작업
+                        </li>
+                        <li>
+                            <img src="./images/graph-05.png" />
+                            <p>80%</p>
+                            사용율
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#">찾아오시는길</a></li>
+                </ul>
+            </nav>
+            <div>
+                <div class="copyright-area">
+                    <label for="link">질병관리본부 관련기관</label>
+                    <select id="link">
+                        <option value="1" selected>관련사이트</option>
+                        <option value="1">미국질병통제예방센터</option>
+                        <option value="2">유럽질병통제예방센터</option>
+                        <option value="3">세계보건기구</option>
+                        <option value="4">일본감염병연구소</option>
+                    </select>
+                    <address>34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원</address>
+                    <address>ⓒ 2019 by KISTI National Supercomputing Center. All Rights Reserved.</address>
+                </div>
+            </div>
+        </footer>
+        <script>
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function () {
+                    var context = this,
+                        args = arguments;
+                    var later = function () {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // 윈도우 리사이즈 될때 열린 메뉴 닫기
+            $(window).on(
+                'resize',
+                debounce(function (e) {
+                    var width = $(this).width();
+                    if (width > 1200) {
+                        $('.close-btn').trigger('click');
+                    }
+                }, 200)
+            );
+
+            // 상단 메뉴 마우스 오버시 펼침
+            $('.gnb-area .menu > li').on('mouseenter', function (e) {
+                $('.menu-bg').show();
+            });
+            $('.gnb-area').on('mouseleave', function (e) {
+                $('.menu-bg').hide();
+            });
+
+            // 사이드 메뉴 아이템 클릭시 닫힘/펼침
+            $('#mySidenav > ul > li')
+                .find('a')
+                .on('click', function () {
+                    var el = $(this);
+                    var menu = el.next('ul');
+
+                    if (menu.is(':visible')) {
+                        menu.hide().find('ul').hide();
+                    } else {
+                        menu.children('li:first').children('ul').show();
+                        menu.slideDown('fast');
+                    }
+
+                    menu.parent().siblings().find('ul').slideUp('fast');
+                });
+
+            // 사이드 메뉴 열기/닫기
+            $('.open-btn').on('click', function () {
+                $('body').css('overflow', 'hidden');
+                $('#mySidenav').addClass('side-nav-slide');
+                $('.dim').addClass('on');
+            });
+
+            $('.close-btn, .dim').on('click', function () {
+                $('body').css('overflow', '');
+                $('#mySidenav').removeClass('side-nav-slide');
+                $('.dim').removeClass('on');
+            });
+
+            // 메인 슬라이더
+            $('.slide-area').slick({
+                dots: true,
+                //autoplay: true,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                arrows: false,
+                centerPadding: 0,
+            });
+
+            // 슬라이더 next/prev
+            $('.img-box .next-btn').on('click', function () {
+                $('.slide-area').slick('slickNext');
+            });
+            $('.img-box .prev-btn').on('click', function () {
+                $('.slide-area').slick('slickPrev');
+            });
+
+            sal();
+
+            var images = document.querySelectorAll('.img');
+            new simpleParallax(images, {
+                delay: 0.6,
+                transition: 'cubic-bezier(0,0,0,1)',
+            });
+        </script>
+    </body>
+</html>

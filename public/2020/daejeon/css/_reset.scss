@@ -1,0 +1,29 @@
+@import 'variables';
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+li,
+p,
+div,
+fieldset,
+button,
+input {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+}
+a {
+    color: $font-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+button {
+    cursor: pointer;
+}

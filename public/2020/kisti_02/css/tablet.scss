@@ -1,0 +1,272 @@
+@charset "utf-8";
+@mixin max-width {
+    width: 100%;
+    margin: 0 auto;
+}
+header {
+    .sm-area {
+        ul {
+            @include max-width;
+        }
+    }
+}
+.menu-bg {
+    visibility: hidden;
+}
+.dim {
+    &.on {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+}
+.header-area {
+    h1 {
+        left: 0.5rem;
+    }
+    > div {
+        @include max-width;
+    }
+    .gnb-area {
+        position: fixed;
+        z-index: 20;
+        right: -10px;
+        top: 0;
+        height: 100%;
+        overflow-y: auto;
+        width: 0;
+        background: #efefef;
+        transition: all 0.3s;
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+    }
+    .side-nav-slide {
+        width: calc(100% - 50%);
+    }
+    .dim {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 19;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .menu {
+        padding-top: 4rem;
+        box-sizing: border-box;
+        text-align: left;
+        position: relative;
+        margin-left: 0;
+        min-width: 500px;
+        > li {
+            margin-right: 0;
+            //border-bottom: solid 1px #ccc;
+            display: block;
+            padding: 0;
+            &:hover::after {
+                display: none;
+            }
+            a,
+            a:hover {
+                font-weight: 500;
+                line-height: 1;
+                padding: 0.7rem 1.5rem;
+                box-sizing: border-box;
+                display: block;
+                border-bottom: solid 1px #ddd;
+            }
+            > a,
+            > a:hover {
+                font-weight: 700;
+            }
+        }
+        > li > ul {
+            display: none;
+            //display: block;
+            box-sizing: border-box;
+            height: auto;
+            background: #f5f5f5;
+        }
+        > li:hover > ul {
+            top: 0;
+            position: relative;
+            animation: none;
+        }
+
+        div {
+            display: none;
+            & + ul {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                text-align: left;
+                &::before {
+                    display: none;
+                }
+                &:hover {
+                    padding: 0;
+                    color: #333;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+            & + ul > li {
+                width: 100%;
+                float: none;
+                ul {
+                    margin-top: 0;
+                    display: none;
+                    a {
+                        font-weight: 400;
+                        width: 100%;
+                        position: relative;
+                        padding-left: 2.5rem;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 1.5rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 0.3rem;
+                            height: 1px;
+                            background: #999;
+                            z-index: 20;
+                        }
+                    }
+                    li a:hover {
+                        font-weight: 400;
+                        color: #333;
+                        padding-left: 2.5rem;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 1.5rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 0.3rem;
+                            height: 1px;
+                            background: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sch-btn {
+        right: 4rem;
+    }
+
+    .open-btn,
+    .close-btn {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 4rem;
+        height: 4rem;
+        background: #091f69;
+        color: #fff;
+        font-size: 1.75rem;
+        line-height: 4rem;
+        text-align: center;
+    }
+    .close-btn {
+        z-index: 21;
+        background: none;
+        color: #091f69;
+    }
+}
+.visual-area {
+    .img-box,
+    .txt-box {
+        @include max-width;
+    }
+}
+
+.news-area {
+    > div {
+        @include max-width;
+    }
+    .news1 {
+        padding-left: 1rem;
+        > ul {
+            padding-right: 1.5rem;
+            li:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    h3 a,
+    p {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 3em;
+    }
+    p {
+        height: 6em;
+    }
+}
+
+.ico-area ul {
+    @include max-width;
+}
+
+.resch-area,
+.photo-area,
+.supercom-area > div {
+    @include max-width;
+    margin-top: 5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.resch-area .resch-img li img {
+    min-height: 10rem;
+}
+.supercom-area {
+    &::before {
+        top: 9rem;
+        height: 6rem;
+    }
+    .com-list1 ul {
+        h3,
+        h4 {
+            font-size: 2.1rem;
+        }
+        p {
+            font-size: 1.8rem;
+        }
+        li {
+            margin-top: 1.5rem;
+        }
+    }
+    .graph {
+        height: 16rem;
+        &:after {
+            top: 2.5rem;
+        }
+    }
+}
+footer {
+    nav,
+    .copyright-area {
+        box-sizing: border-box;
+    }
+    nav {
+        @include max-width;
+        padding: 0.8rem 1rem;
+    }
+    > div .copyright-area {
+        @include max-width;
+        padding: 2.5rem 1rem;
+        select {
+            right: 1rem;
+        }
+    }
+}

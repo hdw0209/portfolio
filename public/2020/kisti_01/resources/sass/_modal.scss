@@ -1,0 +1,279 @@
+.modal {
+    .close {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        right: 60px;
+        top: 60px;
+        color: #ccc;
+        font-size: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        overflow: hidden;
+        z-index: 20;
+        @include ani;
+
+        &::after {
+            @include font-awesome('\f057');
+            position: absolute;
+            left: 0;
+            top: 1px;
+            height: 32px;
+            line-height: 32px;
+            width: 100%;
+            background: #fff;
+        }
+    }
+
+    .close:hover,
+    .close:focus {
+        color: $color-main;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: -2px;
+        border-bottom: solid 1px $color-border1;
+        height: 50px;
+        position: relative;
+        box-sizing: border-box;
+
+        span {
+            position: absolute;
+            height: 50px;
+            left: 0;
+            bottom: -1px;
+            z-index: 2;
+            border-bottom: solid 3px $color-main;
+        }
+    }
+
+    .modal-dialog {
+        width: $modal-lg;
+    }
+
+    .modal-content {
+        padding: 60px;
+        background-color: #fefefe;
+        border-radius: 5px;
+        box-shadow: 0 10px 20px rgba(31, 28, 28, 0.5);
+    }
+}
+
+#login-modal {
+    .close {
+        right: 50px;
+        top: 50px;
+    }
+
+    .modal-dialog {
+        width: $modal-md;
+    }
+
+    .modal-body {
+        position: relative;
+        padding-top: 140px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            background: url(/resources/images/common/logo.svg) no-repeat left top;
+            background-size: 100%;
+        }
+    }
+
+    .btn-login-area {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: dashed 1px $color-border1;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            width: 100%;
+
+            &:first-child {
+                margin-right: 4px;
+            }
+        }
+    }
+}
+
+#sitemap-modal {
+    .modal-body {
+        padding: 30px 0 0 0;
+    }
+
+    //대메뉴
+    .modal-body>ul>li {
+        font-size: 18px;
+        color: $color-main;
+        font-weight: 500;
+        text-indent: 5px;
+
+        &:last-child ul {
+            margin-bottom: 0;
+        }
+    }
+
+    .modal-body>ul>li>ul {
+        border: solid 1px $color-border2;
+        padding: 10px;
+        margin: 15px 0 30px 0;
+        position: relative;
+        color: #333;
+        text-indent: 0;
+    }
+
+    .modal-body>ul>li>ul>li {
+        position: relative;
+        font-weight: 500;
+        font-size: 16px;
+        margin: 10px;
+        color: #333;
+        padding-bottom: 10px;
+        border-bottom: dashed 1px $color-border2;
+
+        &:last-child {
+            border: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .modal-body>ul>li>ul>li>ul {
+        position: absolute;
+        left: 220px;
+        top: -10px;
+        display: flex;
+        padding: 10px 0;
+
+        &::before {
+            display: none;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        li {
+            margin: 0 30px 10px 0;
+        }
+
+        li a {
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+
+            &:hover {
+                color: $color-main;
+            }
+        }
+    }
+}
+
+#privacy-modal {
+    .modal-body {
+        padding: 30px 0 0 0;
+        line-height: 1.5;
+    }
+
+    .modal-body>ul>li {
+        font-size: 19px;
+        font-weight: 700;
+        padding: 20px 0 15px 0;
+
+        >p {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+    }
+
+    .modal-body>ul>li>ol {
+        font-size: 16px;
+        margin-top: 10px;
+
+        >li {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 300;
+            margin: 3px 0;
+        }
+    }
+
+    .modal-body ol>li>ul {
+        font-size: 16px;
+        line-height: 1.4;
+        padding-left: 23px;
+        font-weight: 300;
+        margin-top: 10px;
+
+        li {
+            position: relative;
+            margin: 3px 0;
+            padding-left: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -17px;
+                top: 10px;
+                width: 3px;
+                height: 3px;
+                border-radius: 3px;
+                background: #666;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .modal-body ol {
+        counter-reset: num;
+
+        >li {
+            position: relative;
+            padding-left: 23px;
+        }
+    }
+
+    .modal-body ol>li::before {
+        content: counter(num);
+        counter-increment: num 1;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 13px;
+        height: 13px;
+        border: solid 1px #777;
+        border-radius: 13px;
+        font-size: 10px;
+        text-align: center;
+        line-height: 13px;
+        vertical-align: 1px;
+        margin: 0 3px 0 0;
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -1,0 +1,52 @@
+@import 'variables';
+
+@mixin mq($point) {
+    @if $point == desktop {
+        @media (max-width:#{$desktop}) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media (max-width: #{$tablet}) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media (max-width: #{$mobile}) {
+            @content;
+        }
+    }
+}
+
+@mixin blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+}
+@mixin f-hide {
+    display: block;
+    text-indent: -9999px;
+    color: transparent;
+    overflow: hidden;
+}
+@mixin img-scale {
+    overflow: hidden;
+    img {
+        width: 100%;
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+@mixin w-space {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@mixin font-awesome {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}

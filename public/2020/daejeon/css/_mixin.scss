@@ -1,0 +1,59 @@
+@import 'variables';
+
+@mixin mq($point) {
+    @if $point == tablet {
+        @media (max-width:#{$tablet-w}) {
+            @content;
+        }
+    } @else if $point == tablet_L {
+        @media (max-width: #{$tabletL-w}) {
+            @content;
+        }
+    } @else if $point == mobile_L {
+        @media (max-width: #{$mobileL-w}) {
+            @content;
+        }
+    } @else if $point == mobile_M {
+        @media (max-width: #{$mobileM-w}) {
+            @content;
+        }
+    } @else if $point == mobile_S {
+        @media (max-width: #{$mobileS-w}) {
+            @content;
+        }
+    }
+}
+
+@mixin f-hide {
+    display: block;
+    text-indent: -99999px;
+    color: transparent;
+    overflow: hidden;
+}
+@mixin m-more {
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    a {
+        @include f-hide;
+        width: 17px;
+        height: 17px;
+        background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_more_main.png) no-repeat 0 0;
+    }
+}
+@mixin img-scale {
+    overflow: hidden;
+    img {
+        width: 100%;
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+@mixin w-space {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

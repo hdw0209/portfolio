@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import url('/css/reset.css');
+@import 'mixin';
+
+header {
+    .site-go {
+        background: #333;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            display: flex;
+        }
+        a {
+            color: #fff;
+            font-size: 0.7rem;
+        }
+    }
+    .nav-area {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.mcon1-area {
+    display: grid;
+    grid-template-columns: 23% auto 12%;
+    gap: 1%;
+    background: #f5eee7;
+    position: relative;
+    justify-content: space-between;
+
+    @include mq(desktop) {
+        grid-template-columns: 23% auto 56px;
+    }
+
+    .mcon1 {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: auto 0.6fr 10.5rem;
+        gap: 2%;
+        padding: 2%;
+    }
+    .banner-m {
+        img {
+            width: 100%;
+            height: 620px;
+        }
+    }
+    .notice,
+    .guide-btn {
+        margin-bottom: 3%;
+    }
+    .notice {
+        grid-row: span 2 / auto;
+        background: #fff;
+        margin-right: 2%;
+    }
+    .mayor {
+        grid-column: span 2 / auto;
+        background: #333;
+    }
+    .guide-btn {
+        grid-column: span 2 / auto;
+        background: #fff;
+    }
+    .banner-s {
+        margin-right: 2%;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 0.5em;
+        }
+        li {
+            display: none;
+            &:nth-child(1),
+            &:nth-child(2) {
+                display: block;
+            }
+            img {
+                width: 100%;
+                height: 10.5rem;
+            }
+        }
+    }
+    .happytogether {
+        background: #c13e0e;
+    }
+    .board-go {
+        background: #e72356;
+    }
+    aside {
+        background: #c13e0e;
+        height: 100%;
+        position: relative;
+
+        @include mq(desktop) {
+            background: none;
+        }
+        > div {
+            background: #c13e0e;
+            @include mq(desktop) {
+                display: none;
+            }
+        }
+        button {
+            @include mq(desktop) {
+                position: absolute;
+                background: #c13e0e;
+                right: -27px;
+                top: 50%;
+                width: 110px;
+                height: 56px;
+                color: #fff;
+                transform: translateY(-50%);
+                transform: rotate(90deg);
+                z-index: 10;
+            }
+        }
+    }
+}
+
+.clip {
+    width: 200px;
+    height: 100px;
+    background: #c13e0e;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover .txt {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    span {
+        float: right;
+        margin-right: 5%;
+    }
+    .txt {
+        border-radius: 10px;
+        font-size: 0.75rem;
+        padding: 1em;
+        box-sizing: border-box;
+        width: 200px;
+        height: 100px;
+        clip-path: inset(0% 100% 0% 0%);
+        background: #333;
+        transition: clip-path 0.5s;
+    }
+}

@@ -1,0 +1,2551 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import 'reset';
+@import 'mixin';
+@import 'variables';
+@import 'animate';
+
+html,
+body {
+    font-size: 20px;
+    font-family: $font;
+    color: $font-color;
+}
+header {
+    position: relative;
+    background: #171d33;
+
+    > div {
+        display: flex;
+        justify-content: space-around;
+        min-width: $tablet-w;
+        max-width: 1800px;
+        margin: 0 auto;
+        height: 4rem;
+        @include mq(tablet) {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    h1,
+    .login-area {
+        margin: 0.8rem 0.8rem 0 0.8rem;
+        min-width: 8rem;
+        width: 8rem;
+    }
+    h1 {
+        @include mq(tablet) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0.8rem;
+            margin: 0;
+            z-index: 20;
+        }
+    }
+
+    .nav-open,
+    .sch-area > button,
+    .sch-area > div > button {
+        width: 4rem;
+        height: 4rem;
+        box-sizing: border-box;
+        padding: 0;
+        line-height: 100%;
+        background: #263143;
+        color: #fff;
+        font-size: 1.5rem;
+        border: none;
+        @include mq(tablet) {
+            border-radius: 100%;
+            width: 2.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            margin: 0.7rem;
+        }
+    }
+
+    .nav-open {
+        display: none;
+        @include mq(tablet) {
+            display: block;
+            position: absolute;
+            top: 0;
+            z-index: 20;
+        }
+    }
+    nav {
+        width: $desktop-w;
+        padding-left: 4rem;
+        @media screen and (max-width: 1500px) {
+            padding: 0;
+        }
+    }
+    .login-area {
+        .sitemap,
+        ul {
+            display: none;
+        }
+        a {
+            font-size: 0.6rem;
+            padding: 0.3em 0;
+            color: #fff;
+            font-weight: 300;
+            display: block;
+            .iconify {
+                margin-left: 0.5em;
+                font-size: 0.5rem;
+            }
+        }
+    }
+}
+
+.gnb {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    height: 4rem;
+    font-size: 0.9rem;
+    overflow: hidden;
+
+    @include mq(tablet) {
+        display: block;
+        width: 100%;
+        text-align: left;
+        height: 100%;
+    }
+
+    a {
+        color: #fff;
+        width: 100%;
+    }
+}
+
+//대메뉴
+.gnb > li {
+    display: block;
+    width: 100%;
+
+    > a {
+        padding: 1.5rem 0;
+        display: inline-block;
+        box-sizing: border-box;
+        @include mq(tablet) {
+            padding: 1rem 1.5rem;
+            background: $gnb1-color;
+            border-top: 1px solid #111319;
+            background: #2b2f3e;
+            position: relative;
+            &::after {
+                content: url('https://api.iconify.design/ri:arrow-down-s-line.svg?color=%23fff&height=24');
+                vertical-align: -0.125em;
+                position: absolute;
+                right: 1.5rem;
+            }
+            &.on::after {
+                content: url('https://api.iconify.design/ri:arrow-up-s-line.svg?color=%23fff&height=24');
+            }
+        }
+
+        &:hover,
+        &.on {
+            text-decoration: none;
+            color: #ffe064;
+            @include mq(tablet) {
+                color: #fff;
+            }
+        }
+    }
+
+    > div {
+        display: none;
+    }
+    &:hover > a {
+        color: #ffe064;
+        @include mq(tablet) {
+            color: #fff;
+        }
+    }
+    &:hover > div {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 4rem;
+        width: 100%;
+        background: $gnb1-color;
+        z-index: 10;
+        @include mq(tablet) {
+            display: none;
+            position: static;
+        }
+    }
+    //참여
+    &:nth-child(1) {
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb1-color;
+            }
+        }
+    }
+    //참여
+    &:nth-child(2) {
+        > div,
+        a::before {
+            background: $gnb2-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb2-color;
+            }
+        }
+
+        .lnb > li > a {
+            background: #cb3f4a;
+            &::before {
+                background: #db7981;
+            }
+        }
+    }
+    //전자
+    &:nth-child(3) {
+        > div,
+        a::before {
+            background: $gnb3-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb3-color;
+            }
+        }
+        .lnb > li > a {
+            background: #4174b6;
+            &::before {
+                background: #7a9ecc;
+            }
+        }
+    }
+    //행정
+    &:nth-child(4) {
+        > div,
+        a::before {
+            background: $gnb4-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb4-color;
+            }
+        }
+        .lnb > li > a {
+            background: #018c67;
+            &::before {
+                background: #4eaf95;
+            }
+        }
+    }
+    //열린
+    &:nth-child(5) {
+        > div,
+        a::before {
+            background: $gnb5-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb5-color;
+            }
+        }
+        .lnb > li > a {
+            background: #178391;
+            &::before {
+                background: #5da8b2;
+            }
+        }
+    }
+    //생활
+    &:nth-child(6) {
+        > div,
+        a::before {
+            background: $gnb6-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb6-color;
+            }
+        }
+        .lnb > li > a {
+            background: #f6a131;
+            &::before {
+                background: #f9bd6f;
+            }
+        }
+    }
+    //대전
+    &:nth-child(7) {
+        > div,
+        a::before {
+            background: $gnb7-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb7-color;
+            }
+        }
+        .lnb > li > a {
+            background: #8a72a8;
+            &::before {
+                background: #8a72a8;
+            }
+        }
+    }
+    //자주찾는정보
+    &:nth-child(8) {
+        > div,
+        a::before {
+            background: $gnb8-color;
+        }
+        @include mq(tablet) {
+            > a.on {
+                background: $gnb8-color;
+            }
+        }
+        .lnb > li > a {
+            background: #1350ad;
+            &::before {
+                background: #5a85c6;
+            }
+        }
+    }
+}
+//서브메뉴
+.gnb h2 {
+    text-align: right;
+    width: 17%;
+    color: #fff;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1.8rem;
+    @include mq(tablet) {
+        display: none;
+    }
+}
+.gnb .lnb {
+    width: 83%;
+    text-align: left;
+    @include mq(tablet) {
+        width: 100%;
+    }
+
+    > li {
+        display: flex;
+        background: #fff;
+        border-bottom: solid 1px #d9d9d9;
+        @include mq(tablet) {
+            display: block;
+        }
+        &:last-child {
+            border-bottom: none;
+            > a::before {
+                display: none;
+            }
+        }
+
+        a {
+            display: block;
+            font-size: 0.75rem;
+            &:hover {
+                text-decoration: underline;
+                @include mq(tablet) {
+                    text-decoration: none;
+                }
+            }
+        }
+        > a {
+            width: 10rem;
+            min-width: 10rem;
+            position: relative;
+            color: #fff;
+            background: #968c8c;
+            padding: 0.5rem 0 0.5rem 0.8rem;
+            box-sizing: border-box;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                height: 1px;
+                width: 100%;
+                background: #c8c0c0;
+            }
+            @include mq(tablet) {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+                font-weight: 300;
+                background: #b0a5a5;
+            }
+        }
+        ul {
+            @include mq(tablet) {
+                padding: 0.8rem 0;
+                display: none;
+            }
+        }
+
+        li {
+            display: inline-block;
+            @include mq(tablet) {
+                display: block;
+            }
+            a {
+                position: relative;
+                padding: 0.5rem 1rem;
+                box-sizing: border-box;
+                color: #333;
+                @include mq(tablet) {
+                    padding: 0.4rem 1.5rem 0.4rem 2.2rem;
+                    background: #fff;
+                    color: #555;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 4px;
+                    margin-left: 0.5rem;
+                    background: #968c8c;
+                    @include mq(tablet) {
+                        margin-left: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mq(tablet) {
+    #side-nav {
+        display: block;
+        padding: 0;
+        position: fixed;
+        left: -16rem;
+        top: 0;
+        width: 16rem;
+        height: 100%;
+        background: #4e5366;
+        z-index: 100;
+        overflow-y: auto;
+        transition: left 0.3s;
+
+        &.on {
+            left: 0;
+        }
+
+        .login-area {
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 8rem;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            margin: 0;
+
+            a {
+                font-size: 0.8rem;
+                font-weight: 500;
+                border: 1px solid #838794;
+                border-radius: 25px;
+                padding: 0.8em 1rem;
+                display: inline-block;
+                margin-bottom: 0.3rem;
+            }
+            .sitemap {
+                display: inline-block;
+            }
+        }
+    }
+    .dim {
+        &.on {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            z-index: 49;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+//검색
+.sch-area {
+    position: relative;
+    width: 4rem;
+    min-width: 4rem;
+    margin-right: 3rem;
+    @media screen and (max-width: 1500px) {
+        margin-right: 0;
+    }
+    @include mq(tablet) {
+        position: absolute;
+        width: 100%;
+        text-align: right;
+    }
+    > div {
+        display: none;
+    }
+    > button,
+    > div > button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include mq(tablet) {
+            position: static;
+        }
+    }
+
+    &.on > div {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include mq(tablet) {
+            width: 100%;
+        }
+        > div {
+            position: absolute;
+            left: -22.45rem;
+            top: 3.95rem;
+            background: #fff;
+            width: 26.5rem;
+            height: 11.5rem;
+            border: solid 1px #2b2f3e;
+            z-index: 40;
+            a {
+                color: #333;
+            }
+            @include mq(tablet) {
+                left: 0;
+                top: 4rem;
+                width: 100%;
+                height: 6rem;
+                border: none;
+                background: rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+
+    //검색박스
+    .sch-list {
+        text-align: left;
+        display: flex;
+        h3 {
+            font-size: 0.9rem;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            @include mq(tablet) {
+                display: none;
+            }
+        }
+        label {
+            position: absolute;
+            left: -99999px;
+            top: 0;
+            overflow: hidden;
+            height: 1px;
+        }
+        > * {
+            padding: 1.15rem;
+        }
+        fieldset {
+            width: 65%;
+            @include mq(tablet) {
+                width: 100%;
+                text-align: center;
+                padding: 1.65rem;
+            }
+            select,
+            input,
+            button {
+                width: 100%;
+                font-size: 0.7rem;
+                padding: 0 0.9rem;
+                height: 2rem;
+                border: solid 1px #dfdfdf;
+                border-radius: 5px;
+                margin-bottom: 0.3rem;
+                @include mq(tablet) {
+                    border-radius: 2px;
+                    font-size: 0.8rem;
+                    height: 2.5rem;
+                    width: 70%;
+                    display: inline-block;
+                    margin: 0;
+                }
+                @include mq(mobile_S) {
+                    width: 60%;
+                }
+            }
+            @include mq(tablet) {
+                select {
+                    display: none;
+                }
+            }
+            input {
+                background: #f5f5f5;
+                &::placeholder {
+                    color: #666;
+                    font-weight: 300;
+                }
+            }
+            button {
+                background: #ff4d30;
+                margin-bottom: none;
+                margin-top: 0.15rem;
+                color: #fff;
+                font-weight: 500;
+                font-size: 0.7rem;
+                border: none;
+                @include mq(tablet) {
+                    background: #0f9f75;
+                    font-size: 0.8rem;
+                    margin-top: 0;
+                    width: 5rem;
+                    min-width: 5rem;
+                    margin-left: 0.5rem;
+                }
+                @include mq(mobile_S) {
+                    margin-left: 0.2rem;
+                }
+            }
+        }
+        section {
+            @include mq(tablet) {
+                display: none;
+            }
+            width: 35%;
+            background: #f9f9f9;
+            border-left: solid 1px #e6e6e6;
+            ol {
+                counter-reset: num;
+            }
+            li {
+                font-size: 0.7rem;
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 0.5rem;
+                &::before {
+                    content: counter(num);
+                    counter-increment: num 1;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0.8rem;
+                    height: 1rem;
+                    padding-top: 0.1rem;
+                    box-sizing: border-box;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 0.6rem;
+                    background: #959595;
+                }
+                &:nth-child(1)::before,
+                &:nth-child(2)::before {
+                    background: #ff4d30;
+                }
+            }
+        }
+    }
+}
+
+//메인
+.m1-area {
+    position: relative;
+    width: 100%;
+    background: #eae1e1 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section04_2.jpg) no-repeat center top;
+    height: 508px;
+    > div {
+        width: $tabletL-w;
+        margin: 0 auto;
+        display: flex;
+    }
+    @include mq(tablet_L) {
+        background-position-y: bottom;
+        height: auto;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        > div {
+            width: 100%;
+        }
+        .m1-2 {
+            display: block;
+        }
+    }
+    @include mq(mobile_L) {
+        padding: 0 1rem 6rem 1rem;
+        .m-logo {
+            position: absolute;
+            left: 50%;
+            bottom: 1.5rem;
+            transform: translateX(-50%);
+        }
+    }
+}
+.m1-1 {
+    justify-content: space-around;
+    align-items: center;
+    height: 5.9rem;
+    .m-logo {
+        margin-right: 1rem;
+        img {
+            width: 100%;
+            max-width: 336px;
+            @include mq(mobile_S) {
+                width: 336px;
+            }
+        }
+        a:nth-of-type(2) {
+            display: none;
+        }
+    }
+    fieldset {
+        position: relative;
+        padding: 0;
+        h3,
+        label {
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: -99999px;
+            height: 1px;
+        }
+        input,
+        button {
+            height: 2.3rem;
+            line-height: 100%;
+            border-radius: 1.5rem;
+        }
+        input {
+            background: #fff;
+            padding: 0 1.2rem;
+            font-size: 0.8rem;
+            width: 20rem;
+        }
+        button {
+            position: absolute;
+            background: #17326f;
+            color: #fff;
+            width: 3.5rem;
+            font-size: 1.4rem;
+            right: 0;
+            top: 0;
+        }
+    }
+    .m-weather {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    @include mq(tablet_L) {
+        justify-content: space-between;
+        .m-logo {
+            a:nth-of-type(2) {
+                display: block;
+            }
+            a:nth-of-type(1) {
+                display: none;
+            }
+        }
+        .m-sch {
+            display: none;
+        }
+    }
+    @include mq(mobile_L) {
+        justify-content: space-around;
+    }
+}
+.m1-2 {
+    justify-content: space-between;
+    @include mq(tablet_L) {
+        display: block;
+        width: auto;
+    }
+    .m-slick {
+        position: relative;
+        button,
+        p {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 0, 0, 0.6);
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            z-index: 10;
+            &:hover {
+                background: #000;
+            }
+        }
+        p {
+            width: 90px;
+            right: 94px;
+            color: #fff;
+            font-weight: 100;
+            line-height: 45px;
+            font-size: 0.7rem;
+            text-align: center;
+            &:hover {
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+        .slick-prev {
+            right: 47px;
+            &::before {
+                content: url('https://api.iconify.design/ic:round-keyboard-arrow-left.svg?color=%23fff&height=30');
+                vertical-align: -0.125em;
+            }
+        }
+        .slick-next {
+            &::before {
+                content: url('https://api.iconify.design/ic:round-keyboard-arrow-right.svg?color=%23fff&height=30');
+                vertical-align: -0.125em;
+            }
+        }
+    }
+
+    .m-slick1 {
+        width: 720px;
+        height: 390px;
+        @include mq(tablet_L) {
+            width: 100%;
+            height: auto;
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 390px;
+            }
+        }
+    }
+    .m-slick2 {
+        margin: 7px 0;
+        width: 474px;
+        height: 173px;
+
+        p {
+            width: 380px;
+            text-align: left;
+            padding-left: 1rem;
+        }
+        @include mq(tablet_L) {
+            width: 100%;
+            height: auto;
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 173px;
+            }
+            p {
+                width: calc(100% - 94px);
+            }
+        }
+    }
+    .m-mayor {
+        background: #4f81b3 url(https://www.daejeon.go.kr/images/drh/main/mayor_back.png) no-repeat right top;
+        color: #fff;
+        height: 110px;
+        letter-spacing: -1px;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 1.3rem 1rem;
+        box-sizing: border-box;
+        a {
+            color: #fff;
+            font-size: 0.8rem;
+        }
+        @include mq(tablet_L) {
+            margin-top: 7px;
+        }
+    }
+    .m-link {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            @include mq(mobile_S) {
+                flex-wrap: wrap;
+            }
+        }
+        li {
+            width: calc(25% - 6px);
+            background: #717482;
+            color: #fff;
+            text-align: center;
+            a {
+                padding-top: 0.5rem;
+                box-sizing: border-box;
+                display: block;
+                color: #fff;
+                height: 93px;
+                font-size: 0.7rem;
+                &:hover {
+                    background: #495062;
+                    svg {
+                        animation: shakeY2;
+                        animation-duration: 2s;
+                    }
+                }
+            }
+            svg {
+                display: block;
+                margin: 0.5rem auto;
+                font-size: 1.5rem;
+            }
+            @include mq(mobile_S) {
+                text-align: left;
+                width: calc(50% - 4px);
+                margin-top: 7px;
+                a {
+                    position: relative;
+                    height: 3rem;
+                    line-height: 3rem;
+                    padding: 0 3rem;
+                }
+
+                svg {
+                    position: absolute;
+                    margin: 0;
+                    top: 0.7rem;
+                    left: 1rem;
+                }
+            }
+        }
+    }
+}
+.m2-area,
+.m3-area,
+.m4-area {
+    h3 {
+        font-size: 1rem;
+        padding: 1.1rem 0;
+        letter-spacing: -2px;
+        color: #000;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .btn-more {
+        @include m-more;
+    }
+}
+
+.m2-area {
+    width: $tabletL-w;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq(tablet_L) {
+        padding: 0 1rem 1rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @include mq(mobile_M) {
+        margin-top: 1rem;
+    }
+    h3 {
+        @include mq(tablet) {
+            padding-left: 1.5rem;
+        }
+        @include mq(mobile_M) {
+            padding-left: 0;
+        }
+    }
+    span {
+        font-size: 0.75rem;
+        padding: 0.5rem 0;
+        @include w-space;
+    }
+}
+.m2-1 {
+    width: 100%;
+    max-width: 672px;
+    > * {
+        position: relative;
+    }
+    .m-notice > ul {
+        width: 100%;
+        height: 265px;
+        border-bottom: solid 1px #dadada;
+        @include mq(mobile_M) {
+            height: auto;
+            border-bottom: none;
+        }
+        &:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        > li {
+            float: left;
+            width: calc(100% / 5 - 20px);
+            @include mq(tablet) {
+                width: calc(100% / 5 - 10px);
+            }
+            @include mq(mobile_M) {
+                float: none;
+                width: 100%;
+            }
+            > a {
+                position: relative;
+                display: block;
+                text-align: center;
+                font-size: 0.8rem;
+                font-weight: normal;
+                padding: 1rem 0;
+                @include mq(mobile_M) {
+                    text-align: left;
+                    border-bottom: solid 1px #dadada;
+                    padding: 0.7rem 0.3rem;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 22px;
+                    background: #dadada;
+                    @include mq(mobile_M) {
+                        display: none;
+                    }
+                }
+                &.on {
+                    color: #fff;
+                    background: #4575ca;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    @include mq(mobile_M) {
+                        background: none;
+                        color: #1d4491;
+                        font-size: 0.9rem;
+                        border-bottom: solid 1px #636363;
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+            ul {
+                position: absolute;
+                left: 0;
+                top: 2.9rem;
+                background: #fff;
+                width: 100%;
+                border-top: solid 1px #636363;
+                padding-top: 1.2rem;
+                @include mq(mobile_M) {
+                    padding: 1.2rem 0;
+                    position: static;
+                    border-top: none;
+                    border-bottom: solid 1px #dadada;
+                }
+                li {
+                    padding: 0.3rem 0;
+                    color: #666;
+                    font-weight: 300;
+                    font-size: 0.68rem;
+                }
+                a {
+                    @include w-space;
+                    display: inline-block;
+                    letter-spacing: -1px;
+                    font-size: 0.75rem;
+                    position: relative;
+                    font-weight: normal;
+                    color: #333;
+                    margin-right: 1rem;
+                    box-sizing: border-box;
+                    width: calc(100% - 90px);
+                    padding-left: 25px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 4px;
+                        height: 4px;
+                        background: #ccc;
+                    }
+                }
+            }
+        }
+    }
+    .m-story {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            @include mq(mobile_M) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        li {
+            width: calc(100% / 3 - 10px);
+            p {
+                @include img-scale;
+            }
+            @include mq(mobile_M) {
+                width: 100%;
+                max-width: 285px;
+                margin-bottom: 1rem;
+            }
+        }
+        @include mq(mobile_M) {
+            margin-top: 1rem;
+        }
+    }
+    @include mq(tablet_L) {
+        max-width: 55%;
+    }
+    @include mq(tablet) {
+        max-width: 100%;
+    }
+    @include mq(mobile_M) {
+        border-bottom: none;
+    }
+}
+.m2-2 {
+    max-width: 474px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq(tablet_L) {
+        max-width: 45%;
+        padding-left: 1rem;
+        box-sizing: border-box;
+    }
+    @include mq(tablet) {
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 1rem;
+        border-top: solid 1px #dadada;
+        border-bottom: solid 1px #dadada;
+    }
+    @include mq(mobile_M) {
+        border: none;
+        margin-top: 0;
+    }
+    > * {
+        position: relative;
+    }
+    .m-movie,
+    .m-hnews {
+        max-width: 205px;
+        width: 100%;
+        @include mq(tablet_L) {
+            width: 50%;
+        }
+        @include mq(tablet) {
+            max-width: 100%;
+        }
+        @include mq(mobile_M) {
+            width: 100%;
+        }
+    }
+    .m-popup,
+    .m-sns {
+        max-width: 240px;
+        width: 100%;
+        @include mq(tablet_L) {
+            width: 50%;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+        @include mq(tablet) {
+            max-width: 100%;
+            padding-left: 0;
+        }
+        @include mq(mobile_M) {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+    .m-movie {
+        border-bottom: solid 1px #dadada;
+        @include mq(tablet) {
+            .btn-more {
+                margin-right: 1.5rem;
+            }
+        }
+        @include mq(mobile_M) {
+            border: none;
+            .btn-more {
+                margin-right: 0;
+            }
+        }
+        a {
+            display: block;
+            max-width: 200px;
+            margin: 0 auto;
+            @include mq(mobile_M) {
+                max-width: 285px;
+            }
+        }
+        p {
+            @include img-scale;
+            img {
+                max-width: 100%;
+                height: 145px;
+                @include mq(mobile_M) {
+                    height: auto;
+                }
+            }
+        }
+        span {
+            position: relative;
+            padding: 0.8rem 0 0.8rem 1.5rem;
+            max-width: 200px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/ico_internet.png) no-repeat 0 0;
+            }
+        }
+    }
+    .m-popup {
+        ul {
+            width: 100%;
+        }
+        .slick-arrow,
+        .popup-more {
+            position: absolute;
+            right: 0;
+            top: -2.1rem;
+            width: 17px;
+            height: 17px;
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat 0 0;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+        .slick-prev {
+            right: 42px;
+            background-position: -369px -103px;
+        }
+        .slick-next {
+            right: 22px;
+            background-position: -391px -103px;
+        }
+        img {
+            width: 100%;
+            margin: 0 auto;
+            height: 187px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            @include mq(tablet) {
+                border-radius: 0;
+                width: 285px;
+            }
+        }
+        .popup-more {
+            top: 1.25rem;
+            background-position: -457px -103px;
+        }
+        @include mq(tablet) {
+            border-bottom: solid 1px #dadada;
+            border-left: solid 1px #dadada;
+        }
+        @include mq(mobile_M) {
+            border: none;
+        }
+    }
+    .m-hnews {
+        background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_teenager.png) no-repeat center 50px;
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        a {
+            text-align: center;
+            width: 90px;
+            height: auto;
+            background: #2e6fc7;
+            border-radius: 100%;
+            margin-top: 4rem;
+            &:nth-child(2) {
+                background: #26579a;
+            }
+            &:hover {
+                background: #ff5722;
+            }
+        }
+    }
+
+    .m-sns {
+        > div {
+            position: relative;
+            height: 250px;
+            background: #e6f0f3;
+            border-radius: 25px;
+            text-align: center;
+            padding: 0.7rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            @include mq(tablet) {
+                border-radius: 0;
+            }
+            @include mq(mobile_L) {
+                height: 340px;
+            }
+        }
+
+        h3 {
+            position: absolute;
+            left: -99999px;
+            top: 0;
+            height: 1px;
+            overflow: hidden;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+        li {
+            margin-right: 0.15rem;
+            > a {
+                display: block;
+                overflow: hidden;
+                width: 36px;
+                height: 36px;
+                border-radius: 100%;
+                text-indent: -99999px;
+                background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_sns.png) no-repeat 0 0;
+                transition: all 0.3s;
+                &.on {
+                    background-position: 0 -36px;
+                }
+            }
+        }
+        > div div {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 3rem;
+            max-width: 176px;
+            width: 100%;
+            background: #e6f0f3;
+            margin: 0 auto;
+            @include img-scale;
+            img {
+                height: 110px;
+            }
+            a {
+                width: 100%;
+            }
+            @include mq(mobile_L) {
+                max-width: 285px;
+                width: 100%;
+                img {
+                    height: 190px;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.75rem;
+            padding-top: 0.5rem;
+            @include w-space;
+        }
+        em {
+            font-style: normal;
+            font-size: 0.65rem;
+            color: #666;
+        }
+    }
+}
+
+.m3-area {
+    background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section02.gif) center 0;
+    padding: 2rem 0;
+    > * {
+        max-width: $tabletL-w;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @include mq(tablet_L) {
+        padding: 1rem;
+    }
+
+    h2 {
+        position: relative;
+        @include f-hide;
+        height: 111px;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            height: 111px;
+        }
+        &::before {
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_02.png) no-repeat center 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 440px;
+            @media (min-width: $mobileL-w) and (max-width: $tablet-w) {
+                width: 55%;
+                background-size: 100%;
+                left: 0;
+                transform: translate(0, -50%);
+            }
+            @include mq(mobile_L) {
+                background-size: 70%;
+            }
+        }
+        &::after {
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_tit02.png) no-repeat right bottom;
+            right: 0;
+            top: 0;
+            width: 300px;
+            @include mq(tablet) {
+                max-width: 40%;
+                background-size: 100%;
+            }
+            @include mq(mobile_L) {
+                display: none;
+            }
+        }
+    }
+    h3 {
+        padding: 0 0 1rem 0;
+    }
+    p {
+        margin-bottom: 1.3rem;
+        font-size: 0.78rem;
+        color: #555;
+        letter-spacing: -1px;
+    }
+    article {
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .m3-1,
+    .m3-2 {
+        border-radius: 25px;
+        display: flex;
+        overflow: hidden;
+
+        @include mq(tablet) {
+            flex-direction: column;
+            border-radius: 0;
+        }
+    }
+}
+.m3-1 {
+    border: solid 2px #fff;
+    .m-minwon {
+        width: 40%;
+        min-width: 40%;
+        background: rgba(255, 255, 255, 0.3);
+        @include mq(tablet_L) {
+            min-width: 50%;
+        }
+        @include mq(tablet) {
+            width: 100%;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        li {
+            width: calc(100% / 2.1);
+            margin: 0.2rem;
+            border-radius: 20px;
+            background: #b2b2b2;
+            overflow: hidden;
+            border: solid 1px #b2b2b2;
+            transition: all 0.3s;
+            @include mq(tablet) {
+                width: calc(100% / 3.2);
+            }
+            @media screen and (max-width: 760px) {
+                width: 45%;
+            }
+
+            &:hover {
+                background: #828282;
+                border-color: #828282;
+            }
+            a {
+                white-space: nowrap;
+                position: relative;
+                display: block;
+                font-size: 0.73rem;
+                padding: 0.5rem;
+                margin-left: 2rem;
+                box-sizing: border-box;
+                background: #fff;
+                letter-spacing: -1px;
+
+                &::before {
+                    content: url('https://api.iconify.design/octicon:plus.svg?color=%23fff&flip=horizontal&height=21');
+                    position: absolute;
+                    text-align: center;
+                    left: -2rem;
+                    top: 50%;
+                    width: 2rem;
+                    line-height: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    .m-guide {
+        width: 60%;
+        min-width: 60%;
+        border-left: solid 1px #fff;
+        @include mq(tablet_L) {
+            min-width: 50%;
+        }
+        @include mq(tablet) {
+            width: 100%;
+            border-top: solid 2px #fff;
+            border-left: none;
+        }
+        ul {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            // margin-top: 2rem;
+            li a {
+                text-align: center;
+                display: block;
+                font-size: 0.75rem;
+                padding-top: 1rem;
+                box-sizing: border-box;
+                &:hover::before {
+                    background-position-y: -127px;
+                    animation: shakeY;
+                    animation-duration: 4s;
+                    --animation-repeat: 1;
+                }
+                &::before {
+                    content: '';
+                    display: block;
+                    margin: 0 auto;
+                    width: 98px;
+                    height: 98px;
+                    margin-bottom: 1rem;
+                    background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_propose.png) no-repeat -602px 0;
+                }
+            }
+        }
+        .slick-arrow {
+            position: relative;
+            display: block;
+            text-indent: -9999px;
+            min-width: 42px;
+            height: 42px;
+            background: transparent;
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -371px -163px;
+                left: 0;
+                top: 0;
+                width: 42px;
+                height: 42px;
+            }
+        }
+        .slick-next {
+            &::before {
+                content: '';
+                background-position-x: -443px;
+            }
+        }
+    }
+}
+.m3-2 {
+    margin-top: 1rem;
+    justify-content: space-between;
+    @include mq(tablet) {
+        margin-top: 0;
+    }
+
+    .m-traffic {
+        background: #597893 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_traffic.png) no-repeat right top;
+        background-size: 35%;
+        min-width: 20%;
+        padding: 1rem;
+
+        @include mq(tablet) {
+            padding: 1.5rem;
+            display: flex;
+            background-size: 10%;
+            background-position-x: 13%;
+        }
+        h3 {
+            @include mq(tablet) {
+                width: 20%;
+            }
+        }
+        h3,
+        a {
+            color: #fff;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1.2rem;
+            @include mq(tablet) {
+                margin-top: 0;
+                width: 80%;
+            }
+        }
+        li {
+            display: block;
+            width: 50%;
+            text-align: center;
+            padding-bottom: 0.3rem;
+            box-sizing: border-box;
+            padding: 0.2rem;
+            &:last-child {
+                width: 100%;
+            }
+            @include mq(tablet) {
+                width: 33.3%;
+            }
+        }
+        li a {
+            display: block;
+            box-sizing: border-box;
+            padding: 0.3rem;
+            background: #375d7e;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            transition: all 0.3s;
+            letter-spacing: -1px;
+            &:hover {
+                color: initial;
+                background: #fff;
+            }
+        }
+    }
+    .m-info {
+        min-width: 60%;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 1rem;
+        @include mq(tablet_L) {
+            padding: 1rem 0.2rem;
+        }
+
+        ul {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+            @include mq(mobile_L) {
+                flex-wrap: wrap;
+                li {
+                    width: 50%;
+                }
+            }
+            li {
+                margin-bottom: 1.5rem;
+            }
+            a {
+                font-size: 0.85rem;
+                display: block;
+                text-align: center;
+                &::after {
+                    content: '';
+                    background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_info_m01.png) no-repeat 0 0;
+                    display: block;
+                    width: 124px;
+                    height: 124px;
+                    background-size: 100%;
+                    margin: 0 auto;
+                    margin-top: 0.7rem;
+                }
+                &:hover::after {
+                    background-position-y: -210px;
+                    margin-top: 0.7rem;
+                    animation: shakeY;
+                    animation-duration: 4s;
+                    --animation-repeat: 1;
+                }
+            }
+        }
+    }
+    .m-service {
+        min-width: 20%;
+        h3,
+        a {
+            color: #fff;
+        }
+        padding: 0;
+        background: #95bdd9;
+        @include mq(tablet) {
+            display: flex;
+        }
+
+        div:nth-of-type(1) {
+            padding: 1rem;
+            background: #7395af;
+            @include mq(tablet) {
+                padding: 1.5rem;
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+                width: 48%;
+                text-align: center;
+                margin-bottom: 0.3rem;
+                @include mq(tablet) {
+                    width: 30%;
+                }
+                a {
+                    display: block;
+                    background: #5b7f9d;
+                    border-radius: 20px;
+                    padding: 0.4rem 0.5rem;
+                    box-sizing: border-box;
+                    font-size: 0.7rem;
+                    @include w-space;
+                }
+            }
+        }
+        div:nth-of-type(2) {
+            @include mq(tablet) {
+                width: 40%;
+            }
+        }
+        div:nth-of-type(2) a {
+            display: block;
+            padding: 1rem;
+            height: 100%;
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_welfare.png) no-repeat 90% 40%;
+            transition: all 0.3s;
+            @include mq(tablet) {
+                padding: 1.5rem;
+            }
+            &:hover {
+                background-color: #68a2ca;
+            }
+        }
+    }
+}
+
+.m4-area {
+    background: #ccdedc url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_section03.png) no-repeat center 0;
+    padding: 1rem 0 2rem 0;
+    @include mq(tablet_L) {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+}
+.m4-1 {
+    width: $tabletL-w;
+    margin: 0 auto;
+    @include mq(tablet_L) {
+        width: 100%;
+    }
+    .m-title {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_tit03.png) no-repeat center bottom;
+        height: 148px;
+        padding: 1rem 1rem 0 1rem;
+        flex: 0 1 30%;
+        @include mq(tablet) {
+            background: none;
+            padding: 1rem 0 0 0;
+        }
+        @media screen and (max-width: 740px) {
+            height: 230px;
+            padding-top: 5rem;
+            width: 100%;
+        }
+
+        div,
+        ul {
+            flex: 0 1 30%;
+            @media screen and (max-width: 740px) {
+                flex: 0 0 48%;
+            }
+            @include mq(mobile_S) {
+                display: none;
+            }
+        }
+        div {
+            @include mq(tablet) {
+                order: 1;
+            }
+        }
+        div a {
+            position: relative;
+            display: block;
+            text-indent: -99999px;
+            @include mq(mobile_S) {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_03_visit.png) no-repeat 0 0;
+                left: 0;
+                top: 50%;
+                width: 100%;
+                height: 85px;
+                @include mq(tablet) {
+                    background-position-x: center;
+                }
+                @media screen and (max-width: 740px) {
+                    background-position-x: right;
+                    background-size: 80%;
+                }
+            }
+        }
+        h2 {
+            position: relative;
+            text-indent: -99999px;
+            flex: 1 0 300px;
+            @include mq(tablet) {
+                order: 0;
+            }
+            @media screen and (max-width: 740px) {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/tit_03.png) no-repeat 0 0;
+                left: 50%;
+                top: 0;
+                width: 300px;
+                height: 70px;
+                background-size: 100%;
+                transform: translateX(-50%);
+                margin-top: 0.7rem;
+                @media screen and (max-width: 740px) {
+                    width: 250px;
+                }
+            }
+        }
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            @include mq(tablet) {
+                order: 2;
+            }
+            @media screen and (max-width: 740px) {
+                justify-content: flex-start;
+            }
+            @include mq(mobile_S) {
+                transform: translateX(25%);
+            }
+            li {
+                margin-left: 0.3rem;
+            }
+            a {
+                display: block;
+                width: 104px;
+                height: 104px;
+                border-radius: 100%;
+                text-align: center;
+                color: #fff;
+                font-size: 0.75rem;
+                box-sizing: border-box;
+                text-decoration: none;
+                &:hover {
+                    animation: shakeY;
+                    animation-duration: 4s;
+                    --animation-repeat: 1;
+                }
+            }
+            li:nth-child(1) a {
+                padding-top: 1rem;
+                background: #f07b42 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_enjoy.png) no-repeat -111px 0;
+                &:hover {
+                    background-color: #e74d23;
+                }
+            }
+            li:nth-child(2) a {
+                padding-top: 3.3rem;
+                background: #36ac37 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_enjoy.png) no-repeat 0 0;
+                &:hover {
+                    background-color: #109111;
+                }
+            }
+        }
+    }
+}
+.m4-2 {
+    width: $tabletL-w;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    @include mq(tablet_L) {
+        width: 100%;
+    }
+    @include mq(tablet) {
+        border-radius: 0;
+        flex-wrap: wrap;
+    }
+    .m-festival {
+        flex: 0 1 22%;
+        position: relative;
+        background: #ff5353;
+        box-sizing: border-box;
+        @include mq(tablet) {
+            flex: 0 0 45%;
+        }
+        @include mq(mobile_M) {
+            flex: 0 0 100%;
+        }
+        @include mq(mobile_S) {
+            padding-bottom: 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_festival.png) no-repeat 0 0;
+            width: 133px;
+            height: 163px;
+            top: 0;
+            right: 0;
+            opacity: 0.3;
+        }
+        h3 {
+            padding: 1rem;
+            color: #fff;
+        }
+        .m-slick {
+            position: relative;
+            margin: 0 auto;
+            width: 157px;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 5rem;
+            @include mq(mobile_M) {
+                flex: 0 0 100%;
+            }
+            a {
+                display: block;
+                color: #fff;
+                font-size: 0.75rem;
+
+                img {
+                    border-radius: 100%;
+                }
+            }
+            p {
+                margin-top: 0.7rem;
+            }
+            .slick-arrow {
+                position: absolute;
+                bottom: -3rem;
+                left: 50%;
+                transform: translateX(-110%);
+                @include f-hide;
+                width: 40px;
+                height: 40px;
+                margin: 0 5px;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                background-position: -382px -229px;
+                background: #ff5353 url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -382px -229px;
+                transition: all 0.3s;
+                &:hover {
+                    background-color: #b52121;
+                }
+                @include mq(mobile_S) {
+                    left: 0;
+                    transform: translateX(-160%);
+                    top: 3rem;
+                }
+            }
+            .slick-next {
+                background-position: -431px -229px;
+                transform: translateX(10%);
+                @include mq(mobile_S) {
+                    left: 50%;
+                    transform: translateX(230%);
+                }
+            }
+        }
+        .btn-more {
+            right: 1rem !important;
+            @include m-more;
+            a {
+                background-position: 0 100%;
+            }
+        }
+    }
+    .m-tour {
+        width: 56%;
+        position: relative;
+        box-sizing: border-box;
+        @include mq(tablet) {
+            width: 55%;
+        }
+        @include mq(mobile_M) {
+            width: 100%;
+            padding: 0 0 1rem 0;
+        }
+        strong {
+            color: #359f3b;
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+        .btn-more {
+            right: 1rem !important;
+            @include m-more;
+        }
+        h3 {
+            margin-top: -0.5rem;
+            padding: 1rem;
+            @include mq(mobile_M) {
+                padding-left: 1rem;
+            }
+        }
+        .tour-slick {
+            position: relative;
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            @include mq(mobile_M) {
+                margin-bottom: 1rem;
+            }
+
+            a {
+                width: 166px;
+                margin: 0 auto;
+                display: block;
+                position: relative;
+                font-size: 0.75rem;
+                &:hover p::before {
+                    content: '';
+                    position: absolute;
+                    border-radius: 100%;
+                    left: 0;
+                    top: 0;
+                    width: 166px;
+                    height: 166px;
+                    background: rgba(#000000, 0.4);
+                    z-index: 1;
+                }
+                &:hover::before,
+                &:hover::after {
+                    content: '';
+                    position: absolute;
+                    left: calc(166px / 2 - 20px);
+                    top: 83px;
+                    width: 40px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.8);
+                    z-index: 2;
+                    animation: rotateW 1.5s;
+                }
+                &:hover::after {
+                    width: 1px;
+                    height: 40px;
+                    top: calc(166px / 2 - 20px);
+                    left: 83px;
+                }
+                @keyframes rotateW {
+                    from {
+                        transform: rotate(0);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                img {
+                    border-radius: 100%;
+                }
+            }
+            p {
+                margin-top: 0.7rem;
+                span {
+                    display: block;
+                    margin-top: 0.3rem;
+                    font-size: 0.7rem;
+                    color: #703030;
+                }
+            }
+            .slick-arrow {
+                position: relative;
+                display: block;
+                text-indent: -9999px;
+                min-width: 42px;
+                height: 42px;
+                background: transparent;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_controller.png) no-repeat -371px -163px;
+                    left: 0;
+                    top: 0;
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+            .slick-next {
+                &::before {
+                    content: '';
+                    background-position-x: -443px;
+                }
+            }
+        }
+    }
+    .m-r-tour {
+        flex: 0 1 22%;
+        background: #af884c url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_walk.png) no-repeat center 20%;
+        @include mq(tablet) {
+            flex: 0 0 100%;
+            background-position: 20% 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+        h3 {
+            color: #fff;
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 6rem;
+            padding: 0 1rem 1rem 1rem;
+            box-sizing: border-box;
+            @include mq(tablet) {
+                margin-top: 1rem;
+                width: 60%;
+            }
+        }
+        li {
+            flex: 0 0 100%;
+            margin: 0.2rem 0;
+            border-radius: 20px;
+            background: #8b6c3d;
+            transition: all 0.3s;
+            display: block;
+            &:hover {
+                background: #6d4200;
+            }
+            a {
+                white-space: nowrap;
+                position: relative;
+                display: block;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                font-size: 0.73rem;
+                padding: 0.5rem;
+                margin-left: 2rem;
+                box-sizing: border-box;
+                border: solid 1px #fff;
+                background: #fff;
+                letter-spacing: -1px;
+                &:hover {
+                    border: solid 1px #6d4200;
+                }
+                &::before {
+                    content: url('https://api.iconify.design/octicon:plus.svg?color=%23fff&flip=horizontal&height=21');
+                    position: absolute;
+                    text-align: center;
+                    left: -2rem;
+                    top: 50%;
+                    width: 2rem;
+                    line-height: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+.m5-area {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5c97+50,37959d+50 */
+    background: #1e5c97; /* Old browsers */
+    background: -moz-linear-gradient(left, #1e5c97 50%, #37959d 50%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #1e5c97 50%, #37959d 50%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #1e5c97 50%, #37959d 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5c97', endColorstr='#37959d',GradientType=1 ); /* IE6-9 */
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 55px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
+.m5-1 {
+    width: $tabletL-w;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    @include mq(tablet_L) {
+        width: 100%;
+    }
+    @include mq(mobile_L) {
+        flex-wrap: wrap;
+    }
+    h3 {
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: -2px;
+        color: #fff;
+        font-weight: 400;
+        &:before {
+            content: '';
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/bg_text_service.png) no-repeat 0 0;
+            display: inline-block;
+            width: 40px;
+            vertical-align: middle;
+            height: 40px;
+            margin-right: 5px;
+        }
+    }
+    article {
+        width: 33.3%;
+        padding: 0.5rem 2rem 1.5rem 2rem;
+        box-sizing: border-box;
+        background: #1e5c97;
+        @media (min-width: $mobileL-w) and (max-height: $tablet-w) {
+            padding: 0.5rem 1rem 1.5rem 1rem;
+        }
+        @include mq(mobile_L) {
+            width: 100%;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                top: 55px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+    article:nth-of-type(2) {
+        background: #344976;
+        h3:before {
+            background-position: 0 -121px;
+        }
+    }
+    article:nth-of-type(3) {
+        background: #37959d;
+        h3:before {
+            background-position: 0 -242px;
+        }
+    }
+    ul {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 50%;
+            @media (min-width: $mobileL-w) and (max-width: $tablet-w) {
+                width: 100%;
+            }
+        }
+    }
+    a {
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 300;
+        position: relative;
+        padding: 0.3rem 10px;
+        box-sizing: border-box;
+        display: block;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.m6-area {
+    background: #efefef;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    @include mq(tablet_L) {
+        padding: 1rem;
+    }
+    ul {
+        width: $tabletL-w;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        @include mq(tablet_L) {
+            width: 100%;
+        }
+    }
+
+    .slick-arrow {
+        flex: 1 0 21px;
+        order: 1;
+        align-self: center;
+        position: relative;
+        color: transparent;
+        overflow: hidden;
+        height: 21px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 21px;
+            height: 21px;
+            background: url(https://www.daejeon.go.kr/images/drh/layout/common/btn_footer_bnnr2.png) no-repeat 0 0;
+        }
+    }
+    .slick-next {
+        &::before {
+            background-position: -41px 0;
+            width: 20px;
+        }
+    }
+}
+
+footer {
+    background: #3b414d;
+    > div > div {
+        width: $desktop-w;
+        margin: 0 auto;
+        font-weight: 300;
+        color: #d8d8d8;
+        @media screen and(max-width:$desktop-w) {
+            width: 100%;
+        }
+    }
+}
+.f-1 {
+    background: #2f343e;
+    @media screen and(max-width:860px) {
+        background: none;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        @include mq(tablet) {
+            flex-wrap: wrap;
+        }
+    }
+
+    li:first-child a::before {
+        display: none;
+    }
+    a {
+        color: #d8d8d8;
+        font-size: 0.7rem;
+        display: block;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 10px;
+            background: #d8d8d8;
+            margin: 0 0.5rem;
+        }
+    }
+    .f-guide {
+        display: flex;
+        padding: 1rem 0;
+        @media screen and(max-width:$desktop-w) {
+            padding: 1rem;
+        }
+        @include mq(tablet) {
+            width: 100%;
+        }
+        @media screen and(max-width:860px) {
+            justify-content: center;
+            padding-bottom: 0;
+            li:nth-child(2) {
+                a {
+                    color: #fef968;
+                }
+            }
+        }
+        @include mq(mobile_M) {
+            flex-wrap: wrap;
+            li {
+                padding: 3px 0;
+                box-sizing: border-box;
+            }
+        }
+    }
+    .f-link {
+        display: flex;
+        padding: 1rem 0;
+        @media screen and(max-width:$desktop-w) {
+            padding: 1rem;
+        }
+        @include mq(tablet) {
+            width: 100%;
+            background: #3b414d;
+            li {
+                flex: 1 1 33.3%;
+                padding: 2px;
+                box-sizing: border-box;
+            }
+        }
+        @media screen and(max-width:860px) {
+            padding-bottom: 0;
+        }
+        @include mq(mobile_M) {
+            flex-wrap: wrap;
+            li {
+                flex: 1 1 100%;
+            }
+        }
+        a {
+            display: block;
+            background: url(https://www.daejeon.go.kr/images/drh/layout/index_2018/sitelink_icon.gif) no-repeat right center;
+            padding-right: 1rem;
+            box-sizing: border-box;
+            @include mq(tablet) {
+                border: solid 1px #646464;
+                padding: 0.7rem 1rem;
+                background-origin: content-box;
+            }
+        }
+        a::before {
+            height: 14px;
+            background: #646464;
+            @include mq(tablet) {
+                display: none;
+            }
+        }
+    }
+}
+.f-2 {
+    background: #3b414d;
+    padding: 2rem 0;
+    font-size: 0.7rem;
+    @media screen and(max-width:$desktop-w) {
+        padding: 2rem 1rem;
+    }
+    @media screen and(max-width:860px) {
+        padding-top: 1rem;
+    }
+
+    > div {
+        display: flex;
+        justify-content: space-between;
+        > div a {
+            display: none;
+            @include mq(tablet) {
+                display: inline-block;
+                background: #282828;
+                padding: 5px 10px;
+                margin: 2px;
+                color: #fff;
+                span {
+                    font-weight: 500;
+                    color: #ff6e56;
+                }
+            }
+        }
+        @media screen and(max-width:860px) {
+            flex-wrap: wrap;
+            > div,
+            ul {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    address {
+        font-style: normal;
+        margin-bottom: 0.2rem;
+        color: #fff;
+        @include mq(tablet) {
+            display: inline-block;
+        }
+    }
+    ul {
+        display: flex;
+        @media screen and(max-width:860px) {
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    }
+    a {
+        display: block;
+        color: #d8d8d8;
+    }
+    img {
+        @include mq(tablet) {
+            width: 90%;
+        }
+    }
+    .call-center {
+        padding-right: 1.5rem;
+        box-sizing: border-box;
+        @include mq(tablet) {
+            display: none;
+        }
+        a {
+            position: relative;
+            padding-left: 2.8rem;
+            color: #fff;
+            line-height: 1.3;
+            &:hover {
+                text-decoration: none;
+            }
+            strong {
+                position: absolute;
+                left: 0;
+                top: 2px;
+                font-size: 0.8rem;
+            }
+            span {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #ffab58;
+            }
+        }
+    }
+}

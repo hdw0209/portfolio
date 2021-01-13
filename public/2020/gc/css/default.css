@@ -1,0 +1,198 @@
+@import url("/css/reset.css");
+header .site-go {
+  background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .site-go ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .site-go a {
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+header .nav-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mcon1-area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 23% auto 12%;
+      grid-template-columns: 23% auto 12%;
+  gap: 1%;
+  background: #f5eee7;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1600px) {
+  .mcon1-area {
+    -ms-grid-columns: 23% auto 56px;
+        grid-template-columns: 23% auto 56px;
+  }
+}
+
+.mcon1-area .mcon1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+  -ms-grid-rows: auto 0.6fr 10.5rem;
+      grid-template-rows: auto 0.6fr 10.5rem;
+  gap: 2%;
+  padding: 2%;
+}
+
+.mcon1-area .banner-m img {
+  width: 100%;
+  height: 620px;
+}
+
+.mcon1-area .notice,
+.mcon1-area .guide-btn {
+  margin-bottom: 3%;
+}
+
+.mcon1-area .notice {
+  grid-row: span 2 / auto;
+  background: #fff;
+  margin-right: 2%;
+}
+
+.mcon1-area .mayor {
+  grid-column: span 2 / auto;
+  background: #333;
+}
+
+.mcon1-area .guide-btn {
+  grid-column: span 2 / auto;
+  background: #fff;
+}
+
+.mcon1-area .banner-s {
+  margin-right: 2%;
+}
+
+.mcon1-area .banner-s ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 0.5em;
+          column-gap: 0.5em;
+}
+
+.mcon1-area .banner-s li {
+  display: none;
+}
+
+.mcon1-area .banner-s li:nth-child(1), .mcon1-area .banner-s li:nth-child(2) {
+  display: block;
+}
+
+.mcon1-area .banner-s li img {
+  width: 100%;
+  height: 10.5rem;
+}
+
+.mcon1-area .happytogether {
+  background: #c13e0e;
+}
+
+.mcon1-area .board-go {
+  background: #e72356;
+}
+
+.mcon1-area aside {
+  background: #c13e0e;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 1600px) {
+  .mcon1-area aside {
+    background: none;
+  }
+}
+
+.mcon1-area aside > div {
+  background: #c13e0e;
+}
+
+@media (max-width: 1600px) {
+  .mcon1-area aside > div {
+    display: none;
+  }
+}
+
+@media (max-width: 1600px) {
+  .mcon1-area aside button {
+    position: absolute;
+    background: #c13e0e;
+    right: -27px;
+    top: 50%;
+    width: 110px;
+    height: 56px;
+    color: #fff;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    z-index: 10;
+  }
+}
+
+.clip {
+  width: 200px;
+  height: 100px;
+  background: #c13e0e;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.clip:hover .txt {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+          clip-path: inset(0% 0% 0% 0%);
+}
+
+.clip span {
+  float: right;
+  margin-right: 5%;
+}
+
+.clip .txt {
+  border-radius: 10px;
+  font-size: 0.75rem;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 200px;
+  height: 100px;
+  -webkit-clip-path: inset(0% 100% 0% 0%);
+          clip-path: inset(0% 100% 0% 0%);
+  background: #333;
+  -webkit-transition: -webkit-clip-path 0.5s;
+  transition: -webkit-clip-path 0.5s;
+  transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
+}
+/*# sourceMappingURL=default.css.map */
