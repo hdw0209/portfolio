@@ -54,8 +54,12 @@ main {
         margin-top: 7.5rem;
         padding-right: 4rem;
         @media #{map-get($display-breakpoints, 'sm-and-down')} {
-            padding-left: 23rem;
             padding: 1.5rem;
+            padding-left: 23rem;
+        }
+        @media #{map-get($display-breakpoints, 'xs-only')} {
+            padding: 1.5rem;
+            margin-top: 0;
         }
     }
 }

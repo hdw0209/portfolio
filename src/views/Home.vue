@@ -112,7 +112,7 @@ export default {
                 details: [
                     {
                         id: 1,
-                        images: ['design_2020_08', 'design_2020_08_02', 'design_2020_08_03', 'design_2020_08_04', 'design_2020_08_05'],
+                        images: ['design_2020_08', 'design_2020_08_02', 'design_2020_08_03', 'design_2020_08_04'],
                         title: '기초과학연구원 자원신청사이트',
                     },
                 ],
