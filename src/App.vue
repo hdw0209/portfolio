@@ -34,7 +34,7 @@
                     </v-tooltip>
                     <v-tooltip top :disabled="$vuetify.breakpoint.xs">
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn fab :small="$vuetify.breakpoint.xs" v-bind="attrs" v-on="on"><img src="@/assets/window.svg" alt="email"/></v-btn>
+                            <v-btn fab :small="$vuetify.breakpoint.xs" v-bind="attrs" v-on="on" href="https://hdw0209.github.io" target="_blank"><img src="@/assets/window.svg" alt="email"/></v-btn>
                         </template>
                         <span>PORTFOLIO Ver.1</span>
                     </v-tooltip>
@@ -49,18 +49,13 @@
 
 <style lang="scss" scoped>
 main {
-    position: relative;
     section {
-        position: absolute;
-        left: 30rem;
-        top: 7.5rem;
+        padding-left: 30rem;
+        margin-top: 7.5rem;
         padding-right: 4rem;
         @media #{map-get($display-breakpoints, 'sm-and-down')} {
-            left: 23rem;
+            padding-left: 23rem;
             padding: 1.5rem;
-        }
-        @media #{map-get($display-breakpoints, 'xs-only')} {
-            position: static;
         }
     }
 }
@@ -78,7 +73,7 @@ nav {
         height: auto;
         background: #3a3e71;
         padding: 2rem 0 1rem;
-        z-index: 999;
+        z-index: 1;
     }
     > :not(.v-list) {
         padding-left: 7.5rem;

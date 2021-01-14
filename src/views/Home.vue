@@ -34,7 +34,7 @@
                 </v-card>
             </v-col>
         </v-row>
-        <v-dialog v-if="open" scrollable v-model="open">
+        <v-dialog v-if="open" scrollable v-model="open" width="900">
             <v-card>
                 <v-card-title class="d-flex justify-space-between">
                     <span class="title">{{ dialogData.title }}</span>
@@ -45,15 +45,31 @@
                     </v-btn>
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text class="pt-3">
+                <v-card-text class="pt-5">
                     <v-row v-for="(d, id) in dialogData.details" :key="id">
-                        <v-col v-for="(img, i) in d.imgs" :key="i" cols="12" sm="6" md="4">
-                            <v-img height="230" :src="require(`@/assets/design/${img}.png`)" position="left top" class="rounded-xl"></v-img>
+                        <v-col
+                            v-for="(image, i) in d.images"
+                            :key="i"
+                            cols="12"
+                            sm="6"
+                            v-viewer="{
+                                button: false,
+                                navbar: false,
+                                title: false,
+                                toolbar: false,
+                            }"
+                        >
+                            <img height="250" width="100%" :src="require(`@/assets/design/${image}.png`)" class="rounded-lg dialog-img" />
                         </v-col>
                     </v-row>
                 </v-card-text>
             </v-card>
         </v-dialog>
+        <div v-viewer class="images clearfix">
+            <template v-for="image in images">
+                <img :src="image" class="image" :key="image" height="200" />
+            </template>
+        </div>
     </div>
 </template>
 
@@ -72,6 +88,12 @@
         box-shadow: 0 0 40px rgba(#000, 0.25) !important;
     }
 }
+.dialog-img {
+    object-fit: cover;
+    object-position: center top;
+    border: solid 1px #f3f3f3;
+    cursor: pointer;
+}
 </style>
 
 <script>
@@ -82,17 +104,25 @@ export default {
         dialogData: null,
         works: [
             {
-                year: '2020/07 ~ 10',
-                title: '강진군도서관 반응형 연습',
-                img: 'design_2020_07',
-                types: ['PUBLISING'],
+                year: '2020/11',
+                title: '기초과학연구원 자원신청사이트',
+                img: 'design_2020_08',
+                types: ['PUBLISING', 'DESIGN', '반응형'],
+                // link: '/2020/gjlib/index.html',
                 details: [
                     {
                         id: 1,
-                        imgs: ['design_2020_07', 'design_2020_07', 'design_2020_07', 'design_2020_07', 'design_2020_07', 'design_2020_07', 'design_2020_07'],
-                        title: '강진군도서관 반응형 연습',
+                        images: ['design_2020_08', 'design_2020_08_02', 'design_2020_08_03', 'design_2020_08_04', 'design_2020_08_05'],
+                        title: '기초과학연구원 자원신청사이트',
                     },
                 ],
+            },
+            {
+                year: '2020/07 ~ 10',
+                title: '강진군도서관 반응형 연습',
+                img: 'design_2020_07',
+                types: ['PUBLISING', '반응형'],
+                link: '/2020/gjlib/index.html',
             },
             {
                 year: '2020/05',
@@ -106,36 +136,42 @@ export default {
                 title: '지출 기록장',
                 img: 'design_2020_05',
                 types: ['APP', 'DESIGN', 'IONIC'],
+                link: 'https://play.google.com/store/apps/details?id=com.hdstove.outgoingrecord',
             },
             {
                 year: '2020/05',
                 title: '하루 기록장',
                 img: 'design_2020_04',
                 types: ['APP', 'DESIGN', 'IONIC'],
+                link: 'https://play.google.com/store/apps/details?id=com.hdstove.onedaydiary',
             },
             {
                 year: '2020/04',
                 title: '대전시청 반응형 연습',
                 img: 'design_2020_02',
-                types: ['PUBLISING'],
+                types: ['PUBLISING', '반응형'],
+                link: '/2020/daejeon/index.html',
             },
             {
                 year: '2020/04',
                 title: '국가슈퍼컴퓨팅센터 반응형 연습',
                 img: 'design_2020_03',
-                types: ['DESIGN', 'PUBLISING'],
+                types: ['DESIGN', 'PUBLISING', '반응형'],
+                link: '/2020/kisti_02/index.html',
             },
             {
                 year: '2019/09 ~ 10 ',
                 title: '국가슈퍼컴퓨팅센터',
                 img: 'design_2020_01',
                 types: ['DESIGN'],
+                link: '/2020/kisti_01/sample.html',
             },
             {
                 year: '2019/09',
                 title: '특허청 메인페이지',
                 img: 'design_2019_01',
                 types: ['DESIGN', 'PUBLISING', '웹표준/웹접근성'],
+                link: 'https://www.kipo.go.kr/',
             },
         ],
     }),
