@@ -36,8 +36,8 @@
         </v-row>
         <v-dialog v-if="open" scrollable v-model="open" width="900">
             <v-card>
-                <v-card-title class="d-flex justify-space-between">
-                    <span class="title">{{ dialogData.title }}</span>
+                <v-card-title class="d-flex justify-space-between px-5">
+                    <span class="title text-truncate" style="width:80%">{{ dialogData.title }}</span>
                     <v-btn icon class="grey--text white" text @click="open = false">
                         <v-icon>
                             mdi-close
@@ -65,11 +65,6 @@
                 </v-card-text>
             </v-card>
         </v-dialog>
-        <div v-viewer class="images clearfix">
-            <template v-for="image in images">
-                <img :src="image" class="image" :key="image" height="200" />
-            </template>
-        </div>
     </div>
 </template>
 
@@ -112,7 +107,7 @@ export default {
                 details: [
                     {
                         id: 1,
-                        images: ['design_2020_08', 'design_2020_08_02', 'design_2020_08_03', 'design_2020_08_04'],
+                        images: ['design_2020_08', 'design_2020_08_02', 'design_2020_08_03', 'design_2020_08_04', 'design_2020_08_05', 'design_2020_08_06'],
                         title: '기초과학연구원 자원신청사이트',
                     },
                 ],
