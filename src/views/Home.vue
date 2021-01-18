@@ -167,6 +167,13 @@ export default {
                 img: 'design_2019_01',
                 types: ['DESIGN', 'PUBLISING', '웹표준/웹접근성'],
                 link: 'https://www.kipo.go.kr/',
+                /*                   details: [
+                    {
+                        id: 1,
+                        images: ['design_2020_09'],
+                        title: '특허청 메인페이지',
+                    },
+                ], */
             },
         ],
     }),

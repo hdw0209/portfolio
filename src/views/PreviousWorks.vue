@@ -35,7 +35,7 @@
                 </v-card>
             </v-col>
         </v-row>
-        <div class="mb-5 mt-10 mb-sm-0 text-center text-sm-right"><v-btn color="primary" class="rounded-pill" href="https://swai-p.tistory.com/" target="_blank">more view</v-btn></div>
+        <div class="mt-10 mb-sm-0 text-center text-sm-right"><v-btn color="primary" class="rounded-pill" href="https://swai-p.tistory.com/" target="_blank">more view</v-btn></div>
     </div>
 </template>
 
