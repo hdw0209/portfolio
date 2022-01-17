@@ -2,17 +2,22 @@
     <v-app>
         <v-main>
             <nav>
-                <h1 class="white--text d-flex align-center">
-                    PORTFOLIO
-                </h1>
+                <h1 class="white--text d-flex align-center">PORTFOLIO</h1>
                 <h2 class="white--text text-uppercase hidden-xs-only">
-                    PUBLISING <span class="accent--text">&</span>
-                    <br />
-                    web/app design
+                    PUBLISING
+                    <span class="accent--text">&</span>
+                    <br />web/app design
                 </h2>
                 <v-list dense dark color="primary">
                     <v-list-item-group>
-                        <v-list-item :ripple="false" v-for="(item, i) in items" :key="i" link :to="item.link" active-class="active">
+                        <v-list-item
+                            :ripple="false"
+                            v-for="(item, i) in items"
+                            :key="i"
+                            link
+                            :to="item.link"
+                            active-class="active"
+                        >
                             <span>{{ item.text }}</span>
                         </v-list-item>
                     </v-list-item-group>
@@ -20,21 +25,47 @@
                 <div class="quick-link">
                     <v-tooltip top :disabled="$vuetify.breakpoint.xs">
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn fab :small="$vuetify.breakpoint.xs" v-bind="attrs" v-on="on" href="mailto:hdkw0209@gmail.com" target="_blank"><img src="@/assets/email.svg" alt="email"/></v-btn>
+                            <v-btn
+                                fab
+                                :small="$vuetify.breakpoint.xs"
+                                v-bind="attrs"
+                                v-on="on"
+                                href="mailto:hdkw0209@gmail.com"
+                                target="_blank"
+                            >
+                                <img src="@/assets/email.svg" alt="email" />
+                            </v-btn>
                         </template>
                         <span>hdkw0209@gmail.com</span>
                     </v-tooltip>
                     <v-tooltip top :disabled="$vuetify.breakpoint.xs">
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn fab :small="$vuetify.breakpoint.xs" v-bind="attrs" v-on="on" class="mx-2 mx-sm-4" href="https://github.com/hdw0209" target="_blank"
-                                ><img src="@/assets/github.svg" alt="email"
-                            /></v-btn>
+                            <v-btn
+                                fab
+                                :small="$vuetify.breakpoint.xs"
+                                v-bind="attrs"
+                                v-on="on"
+                                class="mx-2 mx-sm-4"
+                                href="https://github.com/hdw0209"
+                                target="_blank"
+                            >
+                                <img src="@/assets/github.svg" alt="email" />
+                            </v-btn>
                         </template>
                         <span>https://github.com/hdw0209</span>
                     </v-tooltip>
                     <v-tooltip top :disabled="$vuetify.breakpoint.xs">
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn fab :small="$vuetify.breakpoint.xs" v-bind="attrs" v-on="on" href="https://hdw0209.github.io" target="_blank"><img src="@/assets/window.svg" alt="email"/></v-btn>
+                            <v-btn
+                                fab
+                                :small="$vuetify.breakpoint.xs"
+                                v-bind="attrs"
+                                v-on="on"
+                                href="https://hdw0209.github.io"
+                                target="_blank"
+                            >
+                                <img src="@/assets/window.svg" alt="email" />
+                            </v-btn>
                         </template>
                         <span>PORTFOLIO Ver.1</span>
                     </v-tooltip>
@@ -135,7 +166,11 @@ nav {
             padding: 0 !important;
         }
         &::before {
-            background: linear-gradient(to right, #6387dc 40%, #4bb4cf 99%) !important;
+            background: linear-gradient(
+                to right,
+                #6387dc 40%,
+                #4bb4cf 99%
+            ) !important;
             width: 100%;
             transition: 0.5s;
             transform: scaleX(0);
@@ -169,7 +204,11 @@ nav {
         &.active::before {
             opacity: 1 !important;
             box-shadow: 10px 10px 30px rgba(#000, 0.2);
-            background: linear-gradient(to right, #6387dc 40%, #4bb4cf 99%) !important;
+            background: linear-gradient(
+                to right,
+                #6387dc 40%,
+                #4bb4cf 99%
+            ) !important;
             transform: scaleX(1);
         }
     }
@@ -208,8 +247,8 @@ export default {
     data: () => ({
         selectedItem: 1,
         items: [
-            { text: '2019 ~ 2021', link: '/' },
-            { text: '2004 ~ 2018', link: '/PreviousWorks' },
+            { text: '2020 ~ 2022', link: '/' },
+            { text: '2004 ~ 2019', link: '/PreviousWorks' },
         ],
     }),
 };

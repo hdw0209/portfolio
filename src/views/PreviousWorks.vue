@@ -5,15 +5,13 @@
                 <v-card class="mx-auto rounded-xl pa-5">
                     <div class="d-flex justify-space-between align-center">
                         <div>
-                            <v-card-title class="pa-0 d-flex flex-column align-start subtitle-1 font-weight-medium text-truncate">
+                            <v-card-title
+                                class="pa-0 d-flex flex-column align-start subtitle-1 font-weight-medium text-truncate"
+                            >
                                 {{ work.title }}
-                                <div class="caption grey--text font-weight-medium">
-                                    {{ work.year }}
-                                </div>
+                                <div class="caption grey--text font-weight-medium">{{ work.year }}</div>
                             </v-card-title>
-                            <v-card-text class="px-0 mt-1  grey--text ">
-                                {{ work.description }}
-                            </v-card-text>
+                            <v-card-text class="px-0 mt-1 grey--text">{{ work.description }}</v-card-text>
                         </div>
                     </div>
                     <v-img
@@ -27,15 +25,20 @@
                     ></v-img>
                     <v-row class="mt-2 pa-1">
                         <v-col v-for="(type, i) in work.types" :key="i" class="flex-grow-0 pa-1">
-                            <v-chip small outlined class="text-uppercase">
-                                {{ type }}
-                            </v-chip>
+                            <v-chip small outlined class="text-uppercase">{{ type }}</v-chip>
                         </v-col>
                     </v-row>
                 </v-card>
             </v-col>
         </v-row>
-        <div class="mt-10 mb-sm-0 text-center text-sm-right"><v-btn color="primary" class="rounded-pill" href="https://swai-p.tistory.com/" target="_blank">more view</v-btn></div>
+        <div class="mt-10 mb-sm-0 text-center text-sm-right">
+            <v-btn
+                color="primary"
+                class="rounded-pill"
+                href="https://swai-p.tistory.com/"
+                target="_blank"
+            >more view</v-btn>
+        </div>
     </div>
 </template>
 
@@ -66,6 +69,27 @@ export default {
     name: 'PreviousWorks',
     data: () => ({
         works: [
+            {
+                year: '2019/09 ~ 10 ',
+                title: '국가슈퍼컴퓨팅센터',
+                img: 'design_2020_01',
+                types: ['DESIGN'],
+                link: '/2020/kisti_01/sample.html',
+            },
+            {
+                year: '2019/09',
+                title: '특허청 메인페이지',
+                img: 'design_2019_01',
+                types: ['DESIGN', 'PUBLISING', '웹표준/웹접근성'],
+                link: 'https://www.kipo.go.kr/',
+                /*                   details: [
+                    {
+                        id: 1,
+                        images: ['design_2020_09'],
+                        title: '특허청 메인페이지',
+                    },
+                ], */
+            },
             {
                 title: '천안시 생활체육공원',
                 img: 'design_2012_01',
