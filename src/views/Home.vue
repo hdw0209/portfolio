@@ -265,6 +265,21 @@ export default {
                         title: '부고로 사이트',
                     },], */
             },
+            {
+                year: '2022/01 - 02',
+                title: '대전금융복지상담센터',
+                img: 'gbsinbo_01',
+                types: ['PUBLISING', 'DESIGN', '반응형'],
+                link: 'https://www.gbsinbo.or.kr',
+                details: [
+                    {
+                        id: 1,
+                        images: ['gbsinbo_01', 'gbsinbo_02', 'gbsinbo_03', 'gbsinbo_04'],
+                        title: '대전금융복지상담센터',
+                    },
+
+                ],
+            },
             /* {
                 year: '2020/07 ~ 10',
                 title: '강진군도서관 반응형 연습',
